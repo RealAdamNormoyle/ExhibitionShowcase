@@ -36,12 +36,12 @@ session_start();
 				<div id="banner-wrapper">
 					<div id="banner" class="box container">
 						<div class="row">
-							<div class="col-7 col-12-medium">
-								<h2>Your Gallery Awaits</h2>
+							<div class="col-7 col-12-medium" style="text-align:center;">
+								<br>
 								<p>Get started with just a few clicks!</p>
 								<p>Your work defines you.</p>
 							</div>
-							<div class="col-5 col-12-medium">
+							<div class="col-5 col-12-medium" style="width=35%;padding-right:7%;">
 								<ul>
 									<li><a href="register.php" class="button large icon fa-arrow-circle-right">Create Gallery</a></li>
 									<li><a href="gallery.php?id=1" class="button alt large icon fa-question-circle">Try The Demo</a></li>
