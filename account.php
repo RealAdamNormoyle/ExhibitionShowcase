@@ -257,8 +257,8 @@ session_start();
 					<div id="banner" class="box container">
 						<div class="row">
 							<div class="col-7 col-12-medium">
-								<h2>Welcome back <?php echo $_SESSION["firstname"] ?></h2>
-								<p>Make changes to your account</p>
+								<h2 style="font-size:30px;">Welcome back <?php echo $_SESSION["firstname"] ?></h2>
+								<p style="font-size:25px;">Make changes to your account</p>
 							</div>
 						</div>
 					</div>
@@ -267,7 +267,7 @@ session_start();
 				<br>
 				<div id="banner-wrapper">
 					<div id="banner" class="box container"style="padding-top:20px;padding-bottom:20px;" >
-						<a href="javascript:void(0);" id="accountDetails-trigger" class="button large icon fa-arrow-circle-right" style="height:60px;width:75px;float:left;margin-right:20px;margin-left:-50px;">					
+						<a href="javascript:void(0);" id="accountDetails-trigger" class="button large icon fa-arrow-circle-right" style="height:60px;width:75px;float:left;margin-right:20px;">					
 						</a>	
 						<h2 style="font-size:25px;">Account Details</h2>
 						<p style="font-size:20px;">Change your account details here.</p>
@@ -351,7 +351,7 @@ session_start();
 
 				<div id="banner-wrapper">
 					<div id="banner" class="box container"style="padding-top:20px;padding-bottom:20px;" >
-						<a href="javascript:void(0);" id="accountGalleries-trigger" class="button large icon fa-arrow-circle-right" style="height:60px;width:75px;float:left;margin-right:20px;margin-left:-50px;">					
+						<a href="javascript:void(0);" id="accountGalleries-trigger" class="button large icon fa-arrow-circle-right" style="height:60px;width:75px;float:left;margin-right:20px;">					
 						</a>	
 						<h2 style="font-size:25px;">Galleries</h2>
 						<p style="font-size:20px;">Create and edit your galleries.</p>
@@ -395,7 +395,7 @@ session_start();
 
 								<div id="banner-wrapper">
 					<div id="banner" class="box container"style="padding-top:20px;padding-bottom:20px;" >
-						<a href="javascript:void(0);" id="accountImages-trigger" class="button large icon fa-arrow-circle-right" style="height:60px;width:75px;float:left;margin-right:20px;margin-left:-50px;">					
+						<a href="javascript:void(0);" id="accountImages-trigger" class="button large icon fa-arrow-circle-right" style="height:60px;width:75px;float:left;margin-right:20px;">					
 						</a>	
 						<h2 style="font-size:25px;">Images</h2>
 						<p style="font-size:20px;">Upload and edit your images.</p>
