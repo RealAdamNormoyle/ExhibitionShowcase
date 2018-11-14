@@ -12,8 +12,9 @@
 </script>
 
 						<!-- Logo -->
-							<div id="logo">
-								<h1><a href="index.php">Exhibition Showcase</a></h1>
+							<div id="logoImage" style="height:150px;">
+
+								<img src="images/Logo2.png" height=100%>
 								<!--<span>An Online Virtual Gallery</span>-->
 							</div>
 
@@ -27,7 +28,7 @@
 
 									<?php
 
-									if(isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){
+									if(!isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){
 
 										echo 
 										"<li <?php if ('$currentPage' === 'account') {echo \"class=\"current\"\";} ?><a href=\"account.php\">Dashboard</a></li><li><a href=\"logout.php\">LogOut</a></li>";
