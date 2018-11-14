@@ -8,7 +8,7 @@
 
 
 if(!isset($_POST))
-header('Location: http://www.exhibitionshowcase.co.uk');
+header('Location: index.php');
 
 session_start();
 
@@ -32,10 +32,10 @@ if ($result->num_rows > 0) {
     $_SESSION["totalGalleries"] = $row["totalGalleries"];
     $_SESSION["maxGalleries"] = $row["maxGalleries"];
 
-    header('Location: http://www.exhibitionshowcase.co.uk/account.php');
+    header('Location: account.php');
 } else {
     $_SESSION["isLoggedIn"] = false;
-    header('Location: http://www.exhibitionshowcase.co.uk');
+    header('Location: index.php');
 
 }
 
