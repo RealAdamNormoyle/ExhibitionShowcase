@@ -74,6 +74,12 @@ nav #signup a:hover {
 	font-size: 15px;
 }
 
+.feature circle{
+
+	background-color: #e0e0e0;
+	border-radius:50%;
+}
+
 li.login-content {
 	right: 0;
 	width: 250px;  

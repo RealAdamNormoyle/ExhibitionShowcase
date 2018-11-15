@@ -6,6 +6,19 @@
 -->
 <?php
 session_start();
+
+include "database.php";
+
+if(!isset($_SESSION["LoggedVisit"])){
+
+	$_SESSION["LoggedVisit"] = TRUE;
+
+	$sql = "INSERT INTO `visitors` (address) VALUES ('$_SERVER[REMOTE_ADDR]')";
+	//$sql = "";
+	$result = $conn->query($sql);
+
+}
+
 ?>
 
 <?php $currentPage = 'index'; ?>
