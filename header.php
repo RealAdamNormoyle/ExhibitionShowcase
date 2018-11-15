@@ -28,7 +28,7 @@
 
 									<?php
 
-									if(!isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){
+									if(isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){
 
 										echo 
 										"<li <?php if ('$currentPage' === 'account') {echo \"class=\"current\"\";} ?><a href=\"account.php\">Dashboard</a></li><li><a href=\"logout.php\">LogOut</a></li>";
