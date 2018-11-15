@@ -28,7 +28,7 @@ session_start();
 		var accountType = <?php echo $_SESSION['accounttype'] ;?>;
 		var galleryCount = <?php echo $_SESSION['totalGalleries'];?>;
 		var galleryCountMax = <?php echo $_SESSION['maxGalleries'] ;?>;
-
+		<?php $_SESSION['gallerySize'] = 10 ;?>;
 
 		$(document).ready(function(){
 
@@ -120,6 +120,37 @@ session_start();
 		});
 
 
+		function updateBlueprint(s){
+
+
+				document.getElementById("gallerySmall").style.display = "none";
+				document.getElementById("galleryMedium").style.display = "none";
+				document.getElementById("galleryLarge").style.display = "none";
+
+				document.getElementById("blueprintImageSmall").style.display = "none";
+				document.getElementById("blueprintImageMedium").style.display = "none";
+				document.getElementById("blueprintImageLarge").style.display = "none";
+
+			switch(s){
+
+				case "0":
+				document.getElementById("gallerySmall").style.display = "block";
+				document.getElementById("blueprintImageSmall").style.display = "block";
+				break;
+				case "1":
+				document.getElementById("galleryMedium").style.display = "block";
+				document.getElementById("blueprintImageMedium").style.display = "block";
+
+				break;
+				case "2":
+				document.getElementById("galleryLarge").style.display = "block";
+				document.getElementById("blueprintImageLarge").style.display = "block";
+
+				break;
+			}
+
+		};
+
 	</script>
 	</head>
 	<body class="is-preload homepage">
@@ -152,23 +183,32 @@ session_start();
 
 						</div>
 
-						<div style="background-color:#00000010;padding:10px;border-radius:5px;width:65%;float:right;">
+						<div style="background-color:#00000010;padding:10px;border-radius:5px;width:65%;float:right;overflow:auto;height:65%;">
+
 							<div>
-								<fieldset id="create-gallery-inputs" style="width:100%;">
+								<img id="blueprintImageSmall" src="images/SmallContemporyBlueprint.png" width=50% style="margin-left:25%">
+								<img id="blueprintImageMedium" src="images/SmallContemporyBlueprint.png" width=50% style="margin-left:25%;display:none;">
+								<img id="blueprintImageLarge" src="images/SmallContemporyBlueprint.png" width=50% style="margin-left:25%;display:none;">
+							</div>
 
-								<div style="width:45%;float:left;">
+							<br>
 
-									<p style="font-size:25px; margin:3px;">Gallery Interior</p>
-									<p style="font-size:20px; margin:3px;">Use the dropdown to select the gallery interior</p>
-									<select name="Interior">
-									<option value="Modern">Modern</option>
-									<option value="Contemporary">Contemporary</option>
-									<option value="Traditional">Traditional</option>
-									</select>
+							<div>
+								<p style="font-size:25px; margin:3px;">Image Placements</p>
+								<p style="font-size:20px; margin:3px;">Use the dropdowns to select images to display in each poistion.</p>
+
 								
+								<div id="gallerySmall" style="display:block;">
+								<?php include "gallery-images-10.php"; ?>
 								</div>
-								
-								</fieldset>
+
+								<div id="galleryMedium" style="display:none;">
+								<?php include "gallery-images-20.php"; ?>
+								</div>
+
+								<div id="galleryLarge" style="display:none;">
+								<?php include "gallery-images-50.php"; ?>
+								</div>
 
 							</div>
 
@@ -206,7 +246,7 @@ session_start();
 
 									<p style="font-size:25px; margin:3px;">Gallery Size</p>
 									<p style="font-size:16px; margin:3px;">Use the dropdown to select the gallery size</p>
-									<select name="Size">
+									<select name="Size" onchange="updateBlueprint(this.value)">
 									<option value="0">Small - Single Room (10 Images)</option>
 									<option value="1">Medium - Two Rooms (20 Images)</option>
 									<option value="2">Large - Three Rooms (50 Images)</option>
