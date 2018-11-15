@@ -80,7 +80,17 @@ session_start();
                       </header>
 										<div class="feature circle" style="width:75%;height:75%;background-color: #f0f0f0;border-radius:50%;margin-left:12%;box-shadow:inset 0 0 10px #0090c5;">
 
-                      <p style="font-size:50px;color:#0090c5;font-weight:600;padding-bottom:45%;padding-top:45%;">123123000</p>
+                      <p style="font-size:50px;color:#0090c5;font-weight:600;padding-bottom:45%;padding-top:45%;"><?php 
+                      
+                      include "database.php";
+
+                        $sql = "SELECT * FROM `users`";
+                        //$sql = "";
+                        $result = $conn->query($sql);
+
+                        echo $result->num_rows;
+
+                    ?></p>
                     </div>
                     <br>
 									</section>
@@ -96,15 +106,40 @@ session_start();
                       </header>
 										<div class="feature circle" style="width:75%;height:75%;background-color: #f0f0f0;border-radius:50%;margin-left:12%;box-shadow:inset 0 0 10px #0090c5;">
 
-                      <p style="font-size:50px;color:#0090c5;font-weight:600;padding-bottom:45%;padding-top:45%;">123123000</p>
+                      <p style="font-size:50px;color:#0090c5;font-weight:600;padding-bottom:45%;padding-top:45%;"><?php 
+                      
+                      include "database.php";
+
+                        $sql = "SELECT * FROM `users` WHERE `accountType` > 0";
+                        //$sql = "";
+                        $result = $conn->query($sql);
+                        
+                        echo $result->num_rows;
+                        
+                        ?></p>
                     </div>
                     <br>
 									</section>
+                  
+                </div>
+              </div>
+            </div>
+            
+          </div>
 
-							</div>
+          <div id="main-wrapper">
+					<div class="container">
+						<div class="row gtr-200">
+
+              
+              
+							
 						</div>
 					</div>
 				</div>
+
+
+
 
 
   </body>
