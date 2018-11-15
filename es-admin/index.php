@@ -1,5 +1,8 @@
 <?php
 session_start();
+
+if(!isset($_SESSION["isAdminLoggedIn"]))
+  header('Location: login.php');
 ?>
 
 <!DOCTYPE HTML>
