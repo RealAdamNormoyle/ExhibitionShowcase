@@ -35,7 +35,7 @@ session_start();
             <br>
             <form action="admin-login.php" method="post">
 										<fieldset id="inputs">
-                    <input id="username" type="email" name="Username" placeholder="Username" required>   
+                    <input id="username" type="username" name="Username" placeholder="Username" required>   
                     <br>
 										<input id="password" type="password" name="Password" placeholder="Password" required>
 										</fieldset>
