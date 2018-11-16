@@ -158,12 +158,12 @@ session_start();
 
 		<!-- Modal content -->
 			<div class="modal-content">
-			<a href="javascript:void(0);" id="close-createGallery" class="button medium icon fa-times" style="height:50px; width:60px;font-size:20px;padding:0px;padding-left:7px;padding-top:7px;"></a>
+			<a href="javascript:void(0);" id="close-createGallery" class="button medium icon fa-times" style="height:50px;float:left; width:60px;font-size:20px;padding:0px;padding-left:7px;padding-top:7px;"></a>
+			<h2 style="font-size:25px;float:left;margin-left:30px;margin-top:10px;">Let's Create A New Gallery!</h2>
 
 			<br>
 
 			<div style="padding-top:25px;">
-				<h2 style="font-size:25px;">Let's Create A New Gallery!</h2>
 
 
 
@@ -183,7 +183,7 @@ session_start();
 
 						</div>
 
-						<div style="background-color:#00000010;padding:10px;border-radius:5px;width:65%;float:right;overflow:auto;height:65%;">
+						<div style="background-color:#00000010;padding:10px;border-radius:5px;width:65%;float:right;overflow:visible;height:85%;">
 
 							<div>
 								<img id="blueprintImageSmall" src="images/SmallContemporyBlueprint.png" width=50% style="margin-left:25%">
@@ -198,7 +198,7 @@ session_start();
 								<p style="font-size:20px; margin:3px;">Use the dropdowns to select images to display in each poistion.</p>
 
 								
-								<div id="gallerySmall" style="display:block;">
+								<div id="gallerySmall" style="display:block;overflow:auto;height:30%;">
 								<?php include "gallery-images-10.php"; ?>
 								</div>
 
