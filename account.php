@@ -6,6 +6,12 @@
 -->
 <?php
 session_start();
+
+if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false)
+	header("Loacation : index.php");
+
+
+
 ?>
 
 <?php $currentPage = 'account'; ?>
@@ -158,7 +164,7 @@ session_start();
 
 		<!-- Modal content -->
 			<div class="modal-content">
-			<a href="javascript:void(0);" id="close-createGallery" class="button medium icon fa-times" style="height:50px;float:left; width:60px;font-size:20px;padding:0px;padding-left:7px;padding-top:7px;"></a>
+			<a href="javascript:void(0);" id="close-createGallery" class="button medium icon fa-times" style="height:50px;float:left;;width:60px;font-size:30px;padding:0px;padding: 3% auto;"></a>
 			<h2 style="font-size:25px;float:left;margin-left:30px;margin-top:10px;">Let's Create A New Gallery!</h2>
 
 			<br>
