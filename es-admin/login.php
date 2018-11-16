@@ -18,16 +18,18 @@ session_start();
   <div id="header-wrapper">
   <header id="header" class="container">
     						<!-- Logo -->
-                <div id="logoImage" style="width:100%;margin-left:40%;">
 
-                  <img src="http://www.exhibitionshowcase.co.uk/images/Logo2.png" width=20%>
-                <!--<span>An Online Virtual Gallery</span>-->
-                </div>
       </div>
         </div>
 
   <!-- Banner -->
-    <div id="banner-wrapper" style="width:20%;margin-left:40%;">
+    <div id="banner-wrapper" style="width:400px;margin:40% auto;margin-top:0px;">
+
+
+                <img src="http://www.exhibitionshowcase.co.uk/images/Logo2.png" width=100% style="">
+
+
+
       <div id="banner" class="box container">
           <div class="col-7 col-12-medium" style="text-align:center;width:100%;padding:5%;padding-top:0px;padding-bottom:20px;">
             
