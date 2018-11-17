@@ -1,13 +1,4 @@
 
-<head>
-
-<script>
-
-
-</script>
-</head>
-<html>
-<body>
 <?php
 
 include "database.php";
@@ -46,6 +37,3 @@ include "new-gallery-popup.php";
 </div>
 
 </div>
-
-</body>
-</html>
