@@ -28,7 +28,6 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 		
 		<script>
-		
 		var accountToggleValue = false;
 		var galleriesToggleValue = false;
 		var imagesToggleValue = false;
@@ -52,7 +51,7 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 
 			})
 
-		  $('#accountGalleries-trigger').click(function(){
+		  $("#accountGalleries-trigger").click(function(){
 
 			galleriesToggleValue = !galleriesToggleValue;
 			if(galleriesToggleValue){
@@ -64,7 +63,7 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 			})
 
 
-		  $('#accountImages-trigger').click(function(){
+		  $("#accountImages-trigger").click(function(){
 
 			imagesToggleValue = !imagesToggleValue;
 			if(imagesToggleValue){
@@ -75,20 +74,18 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 
 			})
 
-		  $('#close-createGallery').click(function(){
+		  	$("#close-createGallery").click(function(){
 
                 document.getElementById("newGalleryPopup").style.display = "none";
-				document.getElementById("upgradePopup").style.display = "none";
 			})
 
-			$('#close-upgradeAccount').click(function(){
+			$("#close-upgradeAccount").click(function(){
 
-			document.getElementById("newGalleryPopup").style.display = "none";
 			document.getElementById("upgradePopup").style.display = "none";
 			})
 
 
-		  $('#createGallery-trigger').click(function(){
+		  $("#createGallery-trigger").click(function(){
 
             var canCreate = false;
             switch(accountType){
@@ -118,9 +115,8 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
                 document.getElementById("newGalleryPopup").style.display = "block";
                 document.getElementById("upgradePopup").style.display = "none";
 
-            }else{
-
-                document.getElementById("newGalleryPopup").style.display = "none";
+            }else{ 
+				document.getElementById("newGalleryPopup").style.display = "none";
                 document.getElementById("upgradePopup").style.display = "block";
             }
 
@@ -139,157 +135,53 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 				document.getElementById("blueprintImageMedium").style.display = "none";
 				document.getElementById("blueprintImageLarge").style.display = "none";
 
-			switch(s){
+				var value = s.value;
+
+			switch(value){
 
 				case "0":
 				document.getElementById("gallerySmall").style.display = "block";
 				document.getElementById("blueprintImageSmall").style.display = "block";
+
 				break;
 				case "1":
-				document.getElementById("galleryMedium").style.display = "block";
-				document.getElementById("blueprintImageMedium").style.display = "block";
-
+				if(accountType == 0){
+					document.getElementById("gallerySmall").style.display = "block";
+					document.getElementById("blueprintImageSmall").style.display = "block";
+					document.getElementById("upgradePopup").style.display = "block";
+					s.value = 0;
+				}else{
+					document.getElementById("galleryMedium").style.display = "block";
+					document.getElementById("blueprintImageMedium").style.display = "block";
+				}
 				break;
 				case "2":
-				document.getElementById("galleryLarge").style.display = "block";
-				document.getElementById("blueprintImageLarge").style.display = "block";
 
+				if(accountType != 2){
+					document.getElementById("gallerySmall").style.display = "block";
+					document.getElementById("blueprintImageSmall").style.display = "block";
+					document.getElementById("upgradePopup").style.display = "block";
+					s.value = 0;
+				}else{
+
+					document.getElementById("galleryLarge").style.display = "block";
+					document.getElementById("blueprintImageLarge").style.display = "block";
+				}
 				break;
 			}
 
 		};
-
-	</script>
+		</script>
 	</head>
 	<body class="is-preload homepage">
-			<div id="newGalleryPopup" class="modal">
 
-		<!-- Modal content -->
-			<div class="modal-content">
-			<a href="javascript:void(0);" id="close-createGallery" class="button medium icon fa-times" style="height:50px;float:left;;width:60px;font-size:30px;padding:0px;padding: 3% auto;"></a>
-			<h2 style="font-size:25px;float:left;margin-left:30px;margin-top:10px;">Let's Create A New Gallery!</h2>
+			<?php include "create-gallery-popup.php"; ?>
 
-			<br>
+			<?php include "upgrade-popup.php"; ?>
 
-			<div style="padding-top:25px;">
+			<?php include "gallery-share-popup.php"; ?>
 
-
-
-					<form action="create-gallery.php" method="post">
-					<div>
-						<div style="background-color:#00000010;padding:10px;border-radius:5px;width:30%;float:left;">
-							<div>
-								<fieldset id="create-gallery-inputs" style="width:100%;">
-
-									<p style="font-size:25px; margin:3px;">Gallery Name</p>
-									<input id="gallery-name" type="text" name="GalleryName" placeholder="Name your gallery" required>
-									<p style="font-size:25px; margin:3px;">Gallery Description</p>
-									<input id="gallery-description" type="text" name="GalleryDescription" placeholder="Give your gallery a description" required>
-								</fieldset>
-
-							</div>
-
-						</div>
-
-						<div style="background-color:#00000010;padding:10px;border-radius:5px;width:65%;float:right;overflow:visible;height:85%;">
-
-							<div>
-								<img id="blueprintImageSmall" src="images/SmallContemporyBlueprint.png" width=50% style="margin-left:25%">
-								<img id="blueprintImageMedium" src="images/SmallContemporyBlueprint.png" width=50% style="margin-left:25%;display:none;">
-								<img id="blueprintImageLarge" src="images/SmallContemporyBlueprint.png" width=50% style="margin-left:25%;display:none;">
-							</div>
-
-							<br>
-
-							<div>
-								<p style="font-size:25px; margin:3px;">Image Placements</p>
-								<p style="font-size:20px; margin:3px;">Use the dropdowns to select images to display in each poistion.</p>
-
-								
-								<div id="gallerySmall" style="display:block;overflow:auto;height:30%;">
-								<?php include "gallery-images-10.php"; ?>
-								</div>
-
-								<div id="galleryMedium" style="display:none;">
-								<?php include "gallery-images-20.php"; ?>
-								</div>
-
-								<div id="galleryLarge" style="display:none;">
-								<?php include "gallery-images-50.php"; ?>
-								</div>
-
-							</div>
-
-						</div>
-					</div>
-					<br>
-
-					<div style="background-color:#00000010;padding:10px;border-radius:5px;width:30%;margin-top:200px;">
-					<div>
-						<fieldset id="create-gallery-inputs" style="width:100%;">
-
-								<div>
-
-									<p style="font-size:25px; margin:3px;">Gallery Interior</p>
-									<p style="font-size:16px; margin:3px;">Use the dropdown to select the gallery interior</p>
-									<select name="Interior">
-									<option value="Modern">Modern</option>
-									<option value="Contemporary">Contemporary</option>
-									<option value="Traditional">Traditional</option>
-									</select>
-								
-								</div>
-								
-						</fieldset>
-
-							</div>
-
-					</div>
-
-					<div style="background-color:#00000010;padding:10px;border-radius:5px;width:30%;margin-top:20px;">
-					<div>
-						<fieldset id="create-gallery-inputs" style="width:100%;">
-
-								<div>
-
-									<p style="font-size:25px; margin:3px;">Gallery Size</p>
-									<p style="font-size:16px; margin:3px;">Use the dropdown to select the gallery size</p>
-									<select name="Size" onchange="updateBlueprint(this.value)">
-									<option value="0">Small - Single Room (10 Images)</option>
-									<option value="1">Medium - Two Rooms (20 Images)</option>
-									<option value="2">Large - Three Rooms (50 Images)</option>
-									</select>
-								
-								</div>
-								
-						</fieldset>
-
-							</div>
-
-					</div>
-
-					<fieldset id="create-gallery-actions" style="padding-top:20px;">
-							
-							<input type="submit" id="create-gallery-submit" value="Create" style="width:100px;height:40px;font-size:18px;padding:0px;">
-					</fieldset>
-
-
-					</form>
-
-
-			</div>
-			</div>
-
-		</div>
-
-		<div id="upgradePopup" class="modal">
-		<!-- Modal content -->
-			<div class="modal-content">
-				<a href="javascript:void(0);" id="close-upgradeAccount" class="button medium icon fa-times" style="height:50px; width:60px;font-size:20px;padding:0px;padding-left:7px;padding-top:7px;"></a>
-				<p>Some text in the Modal..</p>
-			</div>
-
-		</div>
+		
 
 		<div id="page-wrapper">
 
@@ -595,80 +487,7 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 					</div>
 				</div>
 
-			<!-- Footer -->
-				<div id="footer-wrapper">
-					<footer id="footer" class="container">
-						<div class="row">
-							<div class="col-3 col-6-medium col-12-small">
-
-								<!-- Links -->
-									<section class="widget links">
-										<h3>Helpful Links</h3>
-										<ul class="style2">
-											<li><a href="#">Log In</a></li>
-											<li><a href="#">Account</a></li>
-											<li><a href="#">Gallery</a></li>
-											<li><a href="#">Log Out</a></li>
-										</ul>
-									</section>
-
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
-
-								<!-- Links -->
-									<section class="widget links">
-										<h3>Premium Benefits</h3>
-										<ul class="style2">
-											<li><a href="#">More than one gallery</a></li>
-											<li><a href="#">More than 20 images per gallery</a></li>
-											<li><a href="#">More gallery interiors</a></li>
-											<li><a href="#">Embedd into your website</a></li>
-										</ul>
-									</section>
-
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
-
-								<!-- Links -->
-									<section class="widget links">
-										<h3>Exhibition Showcase</h3>
-										<ul class="style2">
-											<li><a href="#">Created by AMN SOFTWARE</a></li>
-											<li><a href="#">Press Kit</a></li>
-											<li><a href="#">About</a></li>
-										</ul>
-									</section>
-
-							</div>
-							<div class="col-3 col-6-medium col-12-small">
-
-								<!-- Contact -->
-									<section class="widget contact last">
-										<h3>Contact Us</h3>
-										<ul>
-											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-										</ul>
-										<p>Norwich, United Kingdom<br />
-										contact@exibitionshowcase.co.uk</p>
-									</section>
-
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-12">
-								<div id="copyright">
-									<ul class="menu">
-										<li>&copy; Exibition Showcase. All rights reserved</li><li>Created by : <a href="http://amnsoftware.co.uk">AMN SOFTWARE LTD</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</footer>
-				</div>
+			<?php include 'footer.php'; ?>
 
 			</div>
 
