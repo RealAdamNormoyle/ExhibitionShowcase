@@ -11,11 +11,11 @@
             
             $last_id = $conn->insert_id;
 
-            if(mkdir("/var/www/dev.amnsoftware.co.uk/data/virtualgallery/users/".$last_id."/images/", 0755,true)){
+            if(mkdir("/var/www/exhibitionshowcase.co.uk/users/".$last_id."/images/", 0755,true)){
                 
-                header('Location: http://www.exhibitionshowcase.co.uk/account.php');
+                header('Location: account.php');
             }else{
-                echo "Error: Failed to create folders for user : /var/www/dev.amnsoftware.co.uk/data/virtualgallery/users/".$last_id."/images/";
+                echo "Error: Failed to create folders for user : /var/www/exhibitionshowcase.co.uk/users/".$last_id."/images/";
             }
 
         } else {

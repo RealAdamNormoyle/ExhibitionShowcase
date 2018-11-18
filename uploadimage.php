@@ -4,7 +4,7 @@
         session_start();
         include "database.php";
         //Validate post data
-        $target_dir = "/var/www/dev.amnsoftware.co.uk/data/virtualgallery/users/".$_SESSION["uid"]."/images/";
+        $target_dir = "/var/www/exhibitionshowcase.co.uk/users/".$_SESSION["uid"]."/images/";
         
         $extention = "";
         $uploadOk = 1;
@@ -43,7 +43,7 @@
                 
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                     chmod($target_file, 0755);
-                    header('Location: http://www.exhibitionshowcase.co.uk/account.php');
+                    header('Location: account.php');
                 } else {
                     echo "Sorry, there was an error uploading your file. CODE : " . $_FILES["fileToUpload"]["error"];
                 }
