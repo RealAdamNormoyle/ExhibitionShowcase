@@ -8,25 +8,25 @@ session_start();
 
 include "database.php";
 
-if(!isset($_POST[])) {
+if(!isset($_POST)) {
 
-    header("Location: index.php")
+    header("Location: index.php");
 }
 
 $size = 0;
-$imageCount = {10,20,50};
+$imageCount = array(10,20,50);
 
-switch($_POST['Size']){
+switch($_POST["Size"]){
 
-    case "Small":
+    case "0":
     $size = 0;
 
     break;
-    case "Small":
+    case "1":
     $size = 1;
 
     break;
-    case "Small":
+    case "2":
     $size = 2;
 
     break;
@@ -34,7 +34,7 @@ switch($_POST['Size']){
 
 $images = "";
 
-for($i = 0;$i < $imageCount[$size];$i++){
+for($i = 1;$i <= $imageCount[$size];$i++){
 
     $images .= $_POST["ImagePlacement".$i].",";
 

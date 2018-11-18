@@ -40,9 +40,9 @@
 
 									<p style="font-size:25px; margin:3px;">Gallery Interior</p>
 									<select name="Interior">
-									<option value="Modern">Modern</option>
-									<option value="Contemporary">Contemporary</option>
-									<option value="Traditional">Traditional</option>
+									<option value="0">Modern</option>
+									<option value="1">Contemporary</option>
+									<option value="2">Traditional</option>
 									</select>
 								
 								</div>
