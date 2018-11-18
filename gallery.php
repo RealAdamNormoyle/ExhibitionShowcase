@@ -9,9 +9,14 @@ session_start();
 		<title>Exhibition Showcase</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="TemplateData/style.css">
         <link rel="stylesheet" href="assets/css/main.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        
+        <script src="TemplateData/UnityProgress.js"></script>
+        <script src="Build/UnityLoader.js"></script>
+        <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/Build.json", {onProgress: UnityProgress});
+        </script>
 	</head>
 	<body class="is-preload homepage">
 		<div id="page-wrapper">
@@ -32,11 +37,16 @@ session_start();
 
 			<!-- Features -->
 				<div id="features-wrapper">
-					<div class="container">
-                        <div class="GalleryViewer">
 
+					<div class="container">
+
+					<div class="webgl-content">
+                        <div id="gameContainer" class="GalleryViewer">
                         </div>
-					</div>
+
+						</div>
+						</div>
+					
 				</div>
 
 			<!-- Main -->
