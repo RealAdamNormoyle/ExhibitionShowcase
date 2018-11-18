@@ -3,7 +3,7 @@
 $servername = "p:localhost";
 $username = "virtualgallery";
 $password = "tEgJJq4fFk25DGIh";
-$dbname = "VirtualGallery";
+$dbname = "virtualgallery";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
