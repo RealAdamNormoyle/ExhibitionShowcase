@@ -36,11 +36,8 @@ $images = "";
 
 for($i = 1;$i <= $imageCount[$size];$i++){
 
-    $images .= $_POST["ImagePlacement".$i].",";
-
+    $images .= $_POST[$imageCount[$size]."-ImagePlacement".$i].",";
 }
-
-
 
 $sql = "INSERT INTO galleries (name,description,owner,interior,size,images) VALUES ( '$_POST[GalleryName]','$_POST[GalleryDescription]','$_SESSION[uid]','$_POST[Interior]','$size','$images')";
         
@@ -48,7 +45,7 @@ if ($conn->query($sql) === TRUE) {
 
     $last_id = $conn->insert_id;
 
-    header('Location: gallery.php/?='.$last_id);
+    header("Location: gallery.php?id=".$last_id);
     
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

@@ -142,17 +142,19 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 				case "0":
 				document.getElementById("gallerySmall").style.display = "block";
 				document.getElementById("blueprintImageSmall").style.display = "block";
-
+				<?php $_SESSION['gallerySize'] = 10 ;?>;
 				break;
 				case "1":
 				if(accountType == 0){
 					document.getElementById("gallerySmall").style.display = "block";
 					document.getElementById("blueprintImageSmall").style.display = "block";
 					document.getElementById("upgradePopup").style.display = "block";
+					<?php $_SESSION['gallerySize'] = 10 ;?>;
 					s.value = 0;
 				}else{
 					document.getElementById("galleryMedium").style.display = "block";
 					document.getElementById("blueprintImageMedium").style.display = "block";
+					<?php $_SESSION['gallerySize'] = 20 ;?>;
 				}
 				break;
 				case "2":
@@ -162,10 +164,12 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 					document.getElementById("blueprintImageSmall").style.display = "block";
 					document.getElementById("upgradePopup").style.display = "block";
 					s.value = 0;
+					<?php $_SESSION['gallerySize'] = 10 ;?>;
 				}else{
 
 					document.getElementById("galleryLarge").style.display = "block";
 					document.getElementById("blueprintImageLarge").style.display = "block";
+					<?php $_SESSION['gallerySize'] = 50 ;?>;
 				}
 				break;
 			}
