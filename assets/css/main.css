@@ -147,6 +147,45 @@
 	text-align:center;
 }
 
+/* Style the tab */
+.account-tab {
+    border: 1px solid #ccc;
+	float:right;width:20%;height:100%;background-color:#424242;
+	box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+	border-radius:3px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.account-tab button {
+    display: block;
+    background-color: #2f2f2f;
+    color: rgb(255, 255, 255);
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+	transition: 0.3s;
+	font-weight:400;
+	border-radius:0px;
+
+	font-size: 1em;
+}
+
+/* Change background color of buttons on hover */
+.account-tab button:hover {
+	background-color: #252525;
+	color: #0090c5;
+}
+
+/* Create an active/current "tab button" class */
+.account-tab button.active {
+	background-color: #0090c5;
+	color: #ffffff;
+
+}
+
 .upgrade-Button{
 
 	-moz-transition: background-color .25s ease-in-out;

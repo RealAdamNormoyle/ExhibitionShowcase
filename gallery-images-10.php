@@ -28,6 +28,22 @@ if($rows != 0){
 
 <html>
 <body>
+
+<fieldset id="create-gallery-inputs" style="width:100%;">
+
+<div>
+
+    <p style="font-size:25px; margin:3px;">Featured Image</p>
+    <select name="Featured">
+    <?php echo $htmlString; ?>
+    </select>
+
+</div>
+
+</fieldset>
+
+
+
 <fieldset id="create-gallery-inputs" style="width:100%;">
 
 

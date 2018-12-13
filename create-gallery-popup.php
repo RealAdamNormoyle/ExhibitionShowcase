@@ -90,11 +90,14 @@
 								<img id="blueprintImageLarge" src="images/SmallContemporyBlueprint.png" width=50% style="margin-left:25%;display:none;">
 							</div>
 
+
+
+
 							<br>
 
 							<div>
 								<p style="font-size:25px; margin:3px;">Image Placements</p>
-								<p style="font-size:20px; margin:3px;">Use the dropdowns to select images to display in each poistion.</p>
+								<p style="font-size:18px; margin:3px;">Use the dropdowns to select images to display in each poistion.</p>
 
 								
 								<div id="gallerySmall" style="display:block;overflow:auto;height:40%;">
