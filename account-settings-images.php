@@ -1,43 +1,69 @@
-<div style="height:500px;width:40%;float:left;Margin-right:5%;background-color:#00000010;padding:10px;border-radius:5px;">
+<div style="padding-left:5px;padding-top:5px;overflow:auto;height:100%;" >
+    <div style="width:33%;height:300px;float:left;">
+        <div style="width:80%;height:70%;border-radius:5px;margin:15% 10% 15% 10%;background-color:#00000010;text-align:center;">
 
-	<form action="uploadimage.php" method="post"  enctype="multipart/form-data">
-							
-        <div>
-        <p style="font-size:30px;margin-bottom:10px;">Add New Image</p>
-        </div>
+            <br>
 
-        <fieldset id="imageupload_inputs" style="width:100%;">
+            <h2 style="font-size:18px;">Upload a new image</h2>
+            <p style="font-size:14px;">Select an image to upload</p>
+            <br>
+            <a href="javascript:void(0);" id="remove-account-button" class="remove-account-button" style="background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;">UPLOAD</a>
+    
+        </div>   
+    </div>
 
+<?php
 
-                <p style="font-size:25px; margin:3px;">Image Name</p><input id="image_name" type="text" name="ImageName" placeholder="Enter the display name for the image" required>
-                <p style="font-size:25px;margin:3px;">Image Description </p><input id="image_description" type="text" name="ImageDescription" placeholder="Enter a description for the image" required>
-                <br>
-                <p style="font-size:25px;margin:3px;">Select Image</p><input type="file" name="fileToUpload" id="filetoupload" required>
+include "database.php";
+//Validate post data
+
+$sql = "SELECT * FROM images WHERE owner='$_SESSION[uid]'";
+$result = $conn->query($sql);
+
+if($result->num_rows > 0){
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+
+        echo "
+        <div style=\"width:33%;height:300px;float:left;\">
+        
+                <div style=\"width:95%;height:95%;border-radius:5px;margin:2.5%;background-color:#00000010;\">
+
+                                <div style=\"width:100%;height:50%;\"> 
+                                
+                                        <img width=\"auto\" height=\"100%\" src=\"" ."http://dev.amnsoftware.co.uk/data/virtualgallery/users/" . $_SESSION['uid']. "/images/". $row['id'] . ".jpg" . "\" alt=\"\"/>
+                                
+                                </div> 
+
+                        <div style=\"width:100%;text-align:center;padding-top:5px;\"> 
+                        
+                        <p style=\"height:30px; font-size:20px;margin-bottom: 3px;\">". $row['name'] ."</p>
+                        
+                        <p style=\"height:45px;margin-bottom: 3px; font-size:16px;\">". $row['description'] ."</p>
+                        
+                        </div> 
                 
-        </fieldset>
-        <br>
-        <fieldset id="imageupload_actions">
                 
-                <input type="submit" id="button" value="Upload" style="width:120px;height:50px;font-size:25px;padding:0px;">
-        </fieldset>
+                </div> 
+                
+                <div style=\"margin:5px;width:40px;height:40px;border-radius:3px;background-color:#0090c5;float:right;\">
+                
+                </div>    
+        
+                <div style=\"margin:5px;width:40px;height:40px;border-radius:3px;background-color:#0090c5;float:right;\">
+                
+                        <div style=\"padding-left:8px;padding-top:7px;font-size:25px;font-weight:100;color:white;\" class=\"fa fa-edit\"> 
+                        
+                        </div>
+                
+                </div>
+        
+        </div>";
+       
+    }
+}else{
 
+	echo "There are no images uploaded";
+}
 
-    </form>
-
-
-</div>
-
-<div style="height:500px;width:55%;margin-left:45%;background-color:#00000010;border-radius:5px;padding-top:10px;padding-bottom:10px;overflow:auto;" >
-
-
-                    <?php
-
-
-                    include "images_display_box.php";
-
-
-                    ?>
-
-                    
-
-</div>
+?>

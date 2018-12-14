@@ -30,27 +30,27 @@ if($result->num_rows > 0){
         echo "
         <div style=\"width:33%;height:300px;float:left;\">
         
-        <div style=\"width:95%;height:95%;border-radius:5px;margin:2.5%;background-color:#00000010;\">
-        
-        <div style=\"width:100%;height:50%;\"> 
-        
-        <img width=\"100%\" height=\"100%\" style=\"border-radius:5px 5px 0px 0px;\" src=\"" ."http://dev.amnsoftware.co.uk/data/virtualgallery/users/" . $_SESSION['uid']. "/images/". $row['id'] . ".jpg" . "\" alt=\"\"/> 
-        
-        </div> 
+            <div style=\"width:95%;height:95%;border-radius:5px;margin:2.5%;background-color:#00000010;\">
+            
+                <div style=\"width:100%;height:50%;\"> 
+                
+                    <img width=\"100%\" height=\"100%\" style=\"border-radius:5px 5px 0px 0px;\" src=\"" ."http://dev.amnsoftware.co.uk/data/virtualgallery/users/" . $_SESSION['uid']. "/images/". $row['id'] . ".jpg" . "\" alt=\"\"/> 
+                
+                </div> 
         
         <div style=\"width:100%;text-align:center;padding-top:5px;\"> 
         
-        <p style=\"height:30px; font-size:20px;margin-bottom: 3px;\">". $row['name'] ."</p>
+            <p style=\"height:30px; font-size:20px;margin-bottom: 3px;\">". $row['name'] ."</p>
         
-        <p style=\"height:45px;margin-bottom: 3px; font-size:16px;\">". $row['description'] ."</p>
+            <p style=\"height:45px;margin-bottom: 3px; font-size:16px;\">". $row['description'] ."</p>
         
         </div> 
         
         <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:left;\">
         
         
-        <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fa fa-edit\"> 
-        </div>
+            <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fa fa-edit\"> 
+            </div>
 
         </div>
 
