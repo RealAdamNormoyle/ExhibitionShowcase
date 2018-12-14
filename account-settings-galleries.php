@@ -34,7 +34,7 @@ if($result->num_rows > 0){
             
                 <div style=\"width:100%;height:50%;\"> 
                 
-                    <img width=\"100%\" height=\"100%\" style=\"border-radius:5px 5px 0px 0px;\" src=\"" ."http://dev.amnsoftware.co.uk/data/virtualgallery/users/" . $_SESSION['uid']. "/images/". $row['id'] . ".jpg" . "\" alt=\"\"/> 
+                    <img width=\"100%\" height=\"100%\" style=\"border-radius:5px 5px 0px 0px;\" src=\"" ."http://exhibitionshowcase.co.uk/users/" . $_SESSION['uid']. "/images/". $row['id'] . ".jpg" . "\" alt=\"\"/> 
                 
                 </div> 
         
