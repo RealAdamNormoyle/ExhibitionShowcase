@@ -1,5 +1,7 @@
 <script>
 
+var GAYYYYYYYY = false;
+
 var accountToggleValue = false;
 var galleriesToggleValue = false;
 var imagesToggleValue = false;
