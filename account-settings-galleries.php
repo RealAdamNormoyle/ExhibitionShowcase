@@ -3,14 +3,14 @@
 
 <div style="padding-left:5px;padding-top:5px;overflow:auto;height:100%;" >
     <div style="width:33%;height:300px;float:left;">
-        <div style="width:80%;height:70%;border-radius:5px;margin:15% 10% 15% 10%;background-color:#00000010;text-align:center;">
+        <div style="width:80%;height:70%;border-radius:5px;margin:15% 10% 15% 10%;background-color:#ffffff70;text-align:center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);">
 
             <br>
 
             <h2 style="font-size:18px;">Create a Gallery</h2>
             <p style="font-size:14px;">Lets show the world your work</p>
             <br>
-            <a href="javascript:void(0);" id="remove-account-button" class="remove-account-button" style="background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;">NEW GALLERY</a>
+            <a href="javascript:void(0);" id="createGallery-trigger" class="remove-account-button" style="background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;">NEW GALLERY</a>
     
         </div>   
     </div>
@@ -30,7 +30,7 @@ if($result->num_rows > 0){
         echo "
         <div style=\"width:33%;height:300px;float:left;\">
         
-            <div style=\"width:95%;height:95%;border-radius:5px;margin:2.5%;background-color:#00000010;\">
+            <div style=\"width:95%;height:95%;border-radius:5px;margin:2.5%;background-color:#ffffff70;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\">
             
                 <div style=\"width:100%;height:50%;\"> 
                 
@@ -45,8 +45,10 @@ if($result->num_rows > 0){
             <p style=\"height:45px;margin-bottom: 3px; font-size:16px;\">". $row['description'] ."</p>
         
         </div> 
+
+        <div style=\"margin-top:20px;\"></div>
         
-        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:left;\">
+        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:left;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\">
         
         
             <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fa fa-edit\"> 
@@ -55,7 +57,7 @@ if($result->num_rows > 0){
         </div>
 
 
-        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;\">
+        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\">
         
         
         <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fab fa-facebook-f\"> 
@@ -64,7 +66,7 @@ if($result->num_rows > 0){
         
         </div>
 
-        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;\">
+        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\">
         
         
         <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fab fa-twitter\"> 
@@ -73,7 +75,7 @@ if($result->num_rows > 0){
         
         </div>
 
-        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;\">
+        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\">
         
         
         <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fab fa-instagram\"> 

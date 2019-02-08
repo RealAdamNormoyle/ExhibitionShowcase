@@ -1,13 +1,13 @@
 <div style="padding-left:5px;padding-top:5px;overflow:auto;height:100%;" >
     <div style="width:33%;height:300px;float:left;">
-        <div style="width:80%;height:70%;border-radius:5px;margin:15% 10% 15% 10%;background-color:#00000010;text-align:center;">
+        <div style="width:80%;height:70%;border-radius:5px;margin:15% 10% 15% 10%;background-color:#ffffff70;text-align:center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);">
 
             <br>
 
             <h2 style="font-size:18px;">Upload a new image</h2>
             <p style="font-size:14px;">Select an image to upload</p>
             <br>
-            <a href="javascript:void(0);" id="remove-account-button" class="remove-account-button" style="background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;">UPLOAD</a>
+            <a href="javascript:void(0);" id="upload-image-trigger" class="remove-account-button" style="background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;">UPLOAD</a>
     
         </div>   
     </div>
@@ -25,38 +25,52 @@ if($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
 
         echo "
-        <div style=\"width:33%;height:300px;float:left;\">
+        <div class=\"image-container\" style=\"width:33%;height:300px;float:left;\">
         
-                <div style=\"width:95%;height:95%;border-radius:5px;margin:2.5%;background-color:#00000010;\">
+                <div style=\"width:95%;height:95%;border-radius:5px;margin:2.5%;background-color:#ffffff70;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\">
 
-                                <div style=\"width:100%;height:50%;\"> 
+                                <div style=\"width:90%;height:90%;text-align:center;border-radius:5px;margin:5%;\"> 
                                 
-                                        <img width=\"auto\" height=\"100%\" src=\"" ."http://exhibitionshowcase.co.uk/users/" . $_SESSION['uid']. "/images/". $row['id'] . ".jpg" . "\" alt=\"\"/>
+                                <img style=\"border-radius:5px;margin:2%;\" width=\"auto\" height=\"96%\" src=\"" ."http://exhibitionshowcase.co.uk/users/" . $_SESSION['uid']. "/images/". $row['id'] . ".jpg" . "\" alt=\"\"/>
                                 
                                 </div> 
 
-                        <div style=\"width:100%;text-align:center;padding-top:5px;\"> 
+                                
+                                <div style=\"width:100%;text-align:center;margin-top:-140px;\"> 
                         
-                        <p style=\"height:30px; font-size:20px;margin-bottom: 3px;\">". $row['name'] ."</p>
-                        
-                        <p style=\"height:45px;margin-bottom: 3px; font-size:16px;\">". $row['description'] ."</p>
+                                <div class=\"image-option-overlay\">
+
+                                <img style=\"border-radius:5px;margin-bottom:-140px;background-color:#0090c5;\" width=\"100%\" height=\"155px;\" src=\" \" alt=\"\"/>
+                                
+                                
+                        <form action=\"updatepassword.php\" method=\"post\">
+
+                        <div style=\"width:80%;margin-left:10%;\">
+                            <fieldset id=\"email_inputs\"style=\"width:100%;\">
+                                <input class=\"image-option-overlay-input\" id=\"name\" style=\"height:35px;margin-bottom:10px;display:inline;\" type=\"text\" name=\"ImageName\" placeholder=\"". $row['name'] ."\" required>
+                                <input class=\"image-option-overlay-input\" id=\"description\" style=\"height:35px;display:inline;\"type=\"text\" name=\"Description\" placeholder=\"". $row['description'] ."\" required>
+                            </fieldset>
+        
+                            <fieldset id=\"passwordupdate-actions\" style=\"padding-top:10px;padding-bottom:5px;\">
+                                    
+                                    <input type=\"submit\" id=\"passwrd-update-submit\" value=\"Update\" style=\"width:100px;height:35px;font-size:18px;padding:0px;\">
+                            </fieldset>
+                            
+                        </div>
+        
+        
+        
+                    </form>
+                
                         
                         </div> 
-                
-                
-                </div> 
-                
-                <div style=\"margin:5px;width:40px;height:40px;border-radius:3px;background-color:#0090c5;float:right;\">
-                
-                </div>    
-        
-                <div style=\"margin:5px;width:40px;height:40px;border-radius:3px;background-color:#0090c5;float:right;\">
-                
-                        <div style=\"padding-left:8px;padding-top:7px;font-size:25px;font-weight:100;color:white;\" class=\"fa fa-edit\"> 
-                        
+
+
                         </div>
-                
-                </div>
+            
+
+
+                </div> 
         
         </div>";
        

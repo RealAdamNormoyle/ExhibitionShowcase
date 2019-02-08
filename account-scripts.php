@@ -57,6 +57,17 @@ $(document).ready(function(){
 	})
 
 
+	$("#close-upload-image").click(function(){
+
+	document.getElementById("newImagePopup").style.display = "none";
+	})
+
+
+	$("upload-image-trigger").click(function(){
+
+	document.getElementById("newImagePopup").style.display = "block";
+	})
+
   $("#createGallery-trigger").click(function(){
 
 	var canCreate = false;
@@ -93,6 +104,11 @@ $(document).ready(function(){
 	}
 
 	})
+
+
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+
 });
 
 
@@ -161,8 +177,5 @@ function openTab(evt, cityName) {
 	document.getElementById(cityName).style.display = "block";
 	evt.currentTarget.className += " active";
 }
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
 
 </script>

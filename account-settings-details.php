@@ -1,6 +1,6 @@
 <div style="height:100%;width:49%;padding:10px;overflow:auto;float:left">		
                         		
-        <div style="background-color:#eeeeeeff;width:100%;height:auto;border-radius:5px;padding-top:20px;padding-bottom:10px;">
+        <div style="background-color:#ffffff70;width:100%;height:auto;border-radius:5px;padding-top:20px;padding-bottom:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);">
 
             <form action="updateemail.php" method="post">
 
@@ -43,7 +43,7 @@
         
         </div>
 
-        <div style="background-color:#eeeeeeff;width:100%;height:auto;border-radius:5px;padding-top:20px;padding-bottom:10px;margin-top:10px;">
+        <div style="background-color:#ffffff70;width:100%;height:auto;border-radius:5px;padding-top:20px;padding-bottom:10px;margin-top:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);">
 
             <form action="updatepassword.php" method="post">
 
@@ -76,7 +76,7 @@
 <div style="height:100%;width:49%;padding-top:10px;padding-bottom:10px;overflow:auto;" >
 
 
-    <div style="background-color:#eeeeeeff;width:100%;height:auto;border-radius:5px;padding-top:20px;padding-bottom:10px;">
+    <div style="background-color:#ffffff70;width:100%;height:auto;border-radius:5px;padding-top:20px;padding-bottom:10px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);">
 
 
         <div>

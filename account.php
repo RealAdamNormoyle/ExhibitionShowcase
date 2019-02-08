@@ -34,11 +34,11 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 
 			<?php include "create-gallery-popup.php"; ?>
 
+			<?php include "upload-image-popup.php"; ?>
+
 			<?php include "upgrade-popup.php"; ?>
 
 			<?php include "gallery-share-popup.php"; ?>
-
-		
 
 		<div id="page-wrapper">
 
@@ -67,8 +67,6 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 
 					<div id="banner" class="box container"style="padding-top:20px;padding-bottom:20px;height:670px;" >
 
-
-
 						<div class="account-tab">
 							<button class="tablinks" id="defaultOpen" onclick="openTab(event, 'accountDetails-content')">Account Details</button>
 							<button class="tablinks" onclick="openTab(event, 'accountGalleries-content')">Galleries</button>
@@ -79,7 +77,6 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 						
 						<div style="width:80%;height:100%;background-color:#dddddd;box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.2), inset 0 6px 20px 0 rgba(0, 0, 0, 0.1);border-radius:3px;">
 
-
 							<div id="accountDetails-content" class="tabcontent">
 								<?php
 									include "account-settings-details.php";
@@ -87,32 +84,28 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 							</div>
 
 							<div id="accountGalleries-content"class="tabcontent">							
-							<?php
-							include "account-settings-galleries.php";
-							?>
+								<?php
+									include "account-settings-galleries.php";
+								?>
 							</div>
 
 							<div id="accountImages-content"class="tabcontent">							
-							<?php
-							include "account-settings-images.php";
-							?>
+								<?php
+									include "account-settings-images.php";
+								?>
 							</div>
-
 
 							<div id="accountMembership-content"class="tabcontent">							
-							<?php
-							include "account-settings-membership.php";
-							?>
+								<?php
+									include "account-settings-membership.php";
+								?>
 							</div>
-	
 	
 							<div id="accountMessages-content"class="tabcontent">						
-							<?php
-							include "account-settings-messages.php";
-							?>
-							</div>
-
-						
+								<?php
+									include "account-settings-messages.php";
+								?>
+							</div>					
 
 						</div>
 					</div>
