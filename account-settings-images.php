@@ -1,13 +1,11 @@
 <div style="padding-left:5px;padding-top:5px;overflow:auto;height:100%;" >
-    <div style="width:33%;height:300px;float:left;">
-        <div style="width:80%;height:70%;border-radius:5px;margin:15% 10% 15% 10%;background-color:#ffffff70;text-align:center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);">
+    <div style="width:25%;height:200px;float:left;">
+        <div style="width:80%;height:70%;border-radius:5px;margin:15% 10% 15% 10%;padding-top:10px;background-color:#ffffff70;text-align:center;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);">
 
-            <br>
+            <h2 style="font-size:20px;">Add Image</h2>
+            <p style="font-size:14px;padding: 10px; padding-top:0px;">Click the button below to create a new image</p>
 
-            <h2 style="font-size:18px;">Upload a new image</h2>
-            <p style="font-size:14px;">Select an image to upload</p>
-            <br>
-            <a href="javascript:void(0);" id="upload-image-trigger" class="remove-account-button" style="background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;">UPLOAD</a>
+            <a href="javascript:void(0);" id="upload-image-trigger" class="remove-account-button" style="background-color:#0090c5;color:white;font-size:20px;padding: 5px 15px 5px 15px;text-decoration:none;border-radius:5px;">CREATE</a>
     
         </div>   
     </div>
@@ -25,7 +23,7 @@ if($result->num_rows > 0){
     while($row = $result->fetch_assoc()) {
 
         echo "
-        <div class=\"image-container\" style=\"width:33%;height:300px;float:left;\">
+        <div class=\"image-container\" style=\"width:25%;height:200px;float:left;\">
         
                 <div style=\"width:95%;height:95%;border-radius:5px;margin:2.5%;background-color:#ffffff70;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.1);\">
 

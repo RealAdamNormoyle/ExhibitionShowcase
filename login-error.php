@@ -6,9 +6,13 @@
 -->
 <?php
 session_start();
+
+include "database.php";
+
+
 ?>
 
-<?php $currentPage = 'galleries'; ?>
+<?php $currentPage = 'error'; ?>
 
 <html>
 	<head>
@@ -18,15 +22,6 @@ session_start();
         <link rel="stylesheet" href="assets/css/main.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script>
-		$(document).ready(function(){
-		  $('#login-trigger').click(function(){
-			$(this).next('#LogInPopup').slideToggle();
-			$(this).toggleClass('active');          
-			
-			})
-		});
-</script>
         
 	</head>
 	<body class="is-preload homepage">
@@ -34,100 +29,27 @@ session_start();
 
 			<!-- Header -->
 				<div id="header-wrapper">
-				<?php					
+
+					<?php					
 					include "header.php";
 					?>
+
 				</div>
 
 			<!-- Banner -->
 				<div id="banner-wrapper">
 					<div id="banner" class="box container">
 						<div class="row">
-								<div style="width:30%;">
-								<p>Browse Galleries</p>
-								</div>
-								<div style="width:70%;">
-								<div class="search-container">
-									<form action="galleries.php">
-										<input style="width:80%;margin-right:10px;display:inline-block;" type="text" placeholder="Search.." name="search">
-										<button style="width:35px;height:35px;padding:0px;margin:0px;"type="submit"><i class="fa fa-search"></i></button>
-									</form>
-								</div>
-								</div>
+							<div class="col-7 col-12-medium" style="text-align:center; width:100%;">
+								<p style="font-size:20px;">There was a probelm logging in, check your username/password and try again.</p>
+							</div>
 						</div>
 					</div>
 				</div>
 
 			<!-- Features -->
-				<div id="features-wrapper">
-					<div class="container">
-						<div class="row">
-
-						<?php
-
-include "database.php";
-//Validate post data
-
-$sql = "SELECT * FROM galleries";
-$result = $conn->query($sql);
-
-$pages = ceil($result->num_rows / 25);
-$currentPage = 1;
-
-if($result->num_rows > 0){
-		// output data of each row
-		
-		$itemCount = 25;
-		if($result->num_rows < (25 * $currentPage)){
-			$itemCount = $result->num_rows;
-		}
-
-	for($i =0;$i<$itemCount;$i++){
-
-		$row = $result->fetch_assoc();
-
-			$bannerImage = "";
-
-			if(file_exists("http://exhibitionshowcase.co.uk/users/" . $row['owner']. "/images/banner-". $row['id'] . ".jpg")){
-	
-					$bannerImage = "http://exhibitionshowcase.co.uk/users/" . $row['owner']. "/images/banner-". $row['id'] . ".jpg";
-			}else{
-					$bannerImage = "http://exhibitionshowcase.co.uk/images/banner-default.jpg";
-			}
-
-        echo "
-				<div class=\"col-4 col-12-medium\">
-
-				<!-- Box -->
-					<section class=\"box feature\">
-						<a href=\"#\" class=\"image featured\"><img src=".$bannerImage." alt=\"\" height=\"auto\" width=\"auto\"/></a>
-						<div class=\"inner\" style=\"padding-top:15px;\">
-								<h2 style=\"margin:0px;padding:0px;\">". $row['name']."</h2>
-								<p>". $row['description']."</p>
-								<div class=\"likeBar\">
-								<div class=\"likeBar-likes style=\"width:".($row['likes']/($row['dislikes']+$row['likes']))."\">
-								</div>
-							<div class=\"likeBar-dislikes\" style=\"width:".($row['dislikes']/($row['dislikes']+$row['likes']))."\">
-								</div>
-								</div>
-							<a href=\"gallery.php?id=".$row['id']."\" id=\"createGallery-trigger\" class=\"remove-account-button\" style=\"height:40px;background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;\">ENTER GALLERY</a>
-						</div>
-					</section>
-
-			</div>";
-       
-    }
-}else{
-
-	echo "There are no images uploaded";
-}
-
-?>
-							
-
-						</div>
-					</div>
-				</div>
+				
+                <br>
 
 			<!-- Main -->
 				<div id="main-wrapper">
@@ -138,16 +60,28 @@ if($result->num_rows > 0){
 								<!-- Sidebar -->
 									<div id="sidebar">
 										<section class="widget thumbnails">
-											<h3>Featured Galleries</h3>
+											<h3>Help</h3>
 											<div class="grid">
-												<div class="row gtr-50">
-													<div class="col-6"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
-													<div class="col-6"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
-													<div class="col-6"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
-													<div class="col-6"><a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a></div>
-												</div>
+                                                <div style="margin-bottom:5px;">
+
+                                                <p style="margin:0px;">Forgot Password?</p>
+                                                <a href="" >Reset Password</a>
+                                                </div>
+                                                <div style="margin-bottom:5px;">
+                                                <p style="margin:0px;">Lost access to your email?</p>
+                                                <a href="" >Recover Account</a>
+
+                                                </div>
+
+                                                <div style="margin-bottom:5px;">
+
+                                                <p style="margin:0px;">Dont have an account?</p>
+                                                <a href="" >Create Account</a>
+
+                                                </div>
+
 											</div>
-											<a href="#" class="button icon fa-file-text-o">More</a>
+											<a href="#" class="button icon fa-file-text-o">F.A.Q & Answers</a>
 										</section>
 									</div>
 
@@ -157,12 +91,19 @@ if($result->num_rows > 0){
 								<!-- Content -->
 									<div id="content">
 										<section class="last">
-											<h2>So what's this all about?</h2>
-											<p><strong>Exhibition Showcase</strong>, a feature full interactive virtual gallery by <a href="http://amnsoftware.co.uk">AMN SOFTWARE</a>.
-											Exhibition Showcase provides the perfect place for all artists and creative people alike to show thier work to the world, while perfect for professional use we encourage students to use this brilliant platform to host thier work for the world and potetial employers to see!
-											</p>
-											<p>.</p>
-											<a href="#" class="button icon fa-arrow-circle-right">Continue Reading</a>
+											<h2>Login</h2>
+											<form action="login.php" method="post">
+										<fieldset id="inputs" style="width:50%;">
+										<input id="username" type="email" name="Email" placeholder="Email address" required>   
+                                        <br>
+										<input id="password" type="password" name="Password" placeholder="Password" required>
+										</fieldset>
+										<br>
+										<fieldset id="actions">
+										<input type="submit" id="LogInButton" value="Log in">
+										</fieldset>
+										
+										</form>
 										</section>
 									</div>
 

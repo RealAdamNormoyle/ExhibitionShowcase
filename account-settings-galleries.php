@@ -20,12 +20,55 @@
 include "database.php";
 //Validate post data
 
-$sql = "SELECT * FROM images WHERE owner='$_SESSION[uid]'";
+$sql = "SELECT * FROM galleries WHERE owner='$_SESSION[uid]'";
 $result = $conn->query($sql);
 
 if($result->num_rows > 0){
     // output data of each row
     while($row = $result->fetch_assoc()) {
+
+    // This is the URL you want to shorten
+    $longUrl = "http://www.exhibitionshowcase.co.uk/gallery.php?id=".$row['id'];
+
+    // Get API key from : http://code.google.com/apis/console/
+    $apiKey = 'AIzaSyAEEnp4B5XCDgY_P_xYEALvd9B9M9CU-N8';
+
+    $postData = array('longUrl' => $longUrl);
+    $jsonData = json_encode($postData);
+
+    $curlObj = curl_init();
+
+    curl_setopt($curlObj, CURLOPT_URL, 'https://www.googleapis.com/urlshortener/v1/url?key='.$apiKey);
+    curl_setopt($curlObj, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curlObj, CURLOPT_SSL_VERIFYPEER, 0);
+    curl_setopt($curlObj, CURLOPT_HEADER, 0);
+    curl_setopt($curlObj, CURLOPT_HTTPHEADER, array('Content-type:application/json'));
+    curl_setopt($curlObj, CURLOPT_POST, 1);
+    curl_setopt($curlObj, CURLOPT_POSTFIELDS, $jsonData);
+
+    $response = curl_exec($curlObj);
+
+    // Change the response json string to object
+    $json = json_decode($response);
+    $short = "";
+
+
+    $bannerImage = "";
+
+    if(file_exists("http://exhibitionshowcase.co.uk/users/" . $_SESSION['uid']. "/images/banner-". $row['id'] . ".jpg")){
+
+        $bannerImage = "http://exhibitionshowcase.co.uk/users/" . $_SESSION['uid']. "/images/banner-". $row['id'] . ".jpg";
+    }else{
+        $bannerImage = "http://exhibitionshowcase.co.uk/images/banner-default.jpg";
+    }
+
+    if(isset($json->error)){
+        $short = $longUrl;
+    }else{
+        $short = $json->id;
+    }   
+
+    curl_close($curlObj);
 
         echo "
         <div style=\"width:33%;height:300px;float:left;\">
@@ -34,57 +77,26 @@ if($result->num_rows > 0){
             
                 <div style=\"width:100%;height:50%;\"> 
                 
-                    <img width=\"100%\" height=\"100%\" style=\"border-radius:5px 5px 0px 0px;\" src=\"" ."http://exhibitionshowcase.co.uk/users/" . $_SESSION['uid']. "/images/". $row['id'] . ".jpg" . "\" alt=\"\"/> 
+                    <img width=\"100%\" height=\"100%\" style=\"border-radius:5px 5px 0px 0px;\" src=\"" .$bannerImage. "\" alt=\"\"/> 
                 
                 </div> 
         
         <div style=\"width:100%;text-align:center;padding-top:5px;\"> 
         
-            <p style=\"height:30px; font-size:20px;margin-bottom: 3px;\">". $row['name'] ."</p>
+            <p style=\"height:30px;color:white;font-size:25px;font-weight:600;margin-top: -40px;\">". $row['name'] ."</p>
         
-            <p style=\"height:45px;margin-bottom: 3px; font-size:16px;\">". $row['description'] ."</p>
+            <p style=\"height:45px;margin-bottom: 0px; margin-top: 5px; font-size:16px;\">". $row['description'] ."</p>
+            <fieldset id=\"shortUrl\">
+            <label style=\"font-size:16px;\">Share URL : </label><input id=\"shortUrl\" type=\"text\" onClick=\"this.setSelectionRange(0, this.value.length)\" name=\"url\" value=\"".$short."\" readonly>
+            </fieldset>
+
+            <div style=\"height:10px;\"></div>
+
+            <a href=\"".$longUrl."\" id=\"createGallery-trigger\" class=\"remove-account-button\" style=\"height:40px;background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;\">EDIT</a>
+            <a href=\"gallery.php?id=".$row['id']."\" id=\"createGallery-trigger\" class=\"remove-account-button\" style=\"height:40px;background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;\">VIEW GALLERY</a>
+    
         
         </div> 
-
-        <div style=\"margin-top:20px;\"></div>
-        
-        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:left;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\">
-        
-        
-            <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fa fa-edit\"> 
-            </div>
-
-        </div>
-
-
-        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\">
-        
-        
-        <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fab fa-facebook-f\"> 
-        
-        </div>
-        
-        </div>
-
-        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\">
-        
-        
-        <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fab fa-twitter\"> 
-        
-        </div>
-        
-        </div>
-
-        <div style=\"margin:5px;width:40px;height:30px;border-radius:3px;background-color:#0090c5;float:right;box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);\">
-        
-        
-        <div style=\"height:90%;width:90%;text-align:center;padding:5%;font-size:25px;font-weight:100;color:white;\" class=\"fab fa-instagram\"> 
-        
-        </div>
-        
-        </div>
-
-
         
         </div>
         

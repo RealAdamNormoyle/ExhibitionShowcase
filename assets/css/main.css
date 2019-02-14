@@ -1,6 +1,41 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
 
+.sticky + .content {
+	padding-top: 60px;
+  }
+
+  .sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color:#ffffff;
+	height:75px;
+	display: none;
+  }
+
+.search-container{
+	width:300px;
+	float:left;
+	margin-top:15px;
+}
+
+.likeBar{
+	height:20px;
+	background-color:grey;
+	border-radius:50%;
+	overflow:hidden;  
+}
+
+.likeBar-likes{
+	height:100%;
+	background-color:rgb(0, 185, 62); 
+}
+
+.likeBar-dislikes{
+	height:100%;
+	background-color:rgb(185, 37, 0); 
+}
 
 .image-option-overlay{
 	
@@ -314,6 +349,10 @@
 	height:50px;
 }
 
+.shortUrl{
+	height:20px;
+	border-radius:5px;
+}
 
 nav #login-trigger:hover,
 nav #login .active,
@@ -1830,6 +1869,32 @@ input, select, textarea {
 		margin: 2.5em 0 0 0;
 	}
 
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	select,
+	textarea {
+		
+		height:35px;
+		border-radius: 8px;
+		border: solid 1px #eee;
+	}
+
+		input[type="text"]:focus,
+		input[type="email"]:focus,
+		input[type="password"]:focus,
+		select:focus,
+		textarea:focus {
+			/*border-color: #0090c5;
+			*/
+		}
+
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
+		line-height: 3em;
+	}
+
 /* Forms */
 
 	form label {
@@ -2339,6 +2404,62 @@ input, select, textarea {
 				}
 
 				#nav ul li.action a {
+					background: #10a0d5;
+					color: #fff;
+				}
+
+
+				/* Sticky Nav */
+
+	#sticky-nav {
+		position: fixed;
+		right:0px;
+		font-size: 0.9em;
+		z-index: 1000;
+	}
+
+		#sticky-nav ul {
+			list-style: none;
+			padding-left: 0;
+		}
+
+			#sticky-nav ul li {
+				float: left;
+				line-height: 4.5em;
+				padding-left: 1.5em;
+			}
+
+				#sticky-nav ul li a, #sticky-nav ul li span {
+					-moz-transition: background-color .25s ease-in-out;
+					-webkit-transition: background-color .25s ease-in-out;
+					-ms-transition: background-color .25s ease-in-out;
+					transition: background-color .25s ease-in-out;
+					font-weight: 800;
+					letter-spacing: 0.025em;
+					color: #696969;
+					text-decoration: none;
+					border-radius: 6px;
+					padding: 0.5em 1em 0.5em 1em;
+				}
+
+				#sticky-nav ul li > ul {
+					display: none;
+				}
+
+				#sticky-nav ul li:hover a, #sticky-nav ul li:hover span {
+					background: #fff;
+				}
+
+				#sticky-nav ul li.active a, #sticky-nav ul li.active span {
+					background: #fff;
+				}
+
+				#sticky-nav ul li.current a {
+					background: #444;
+					color: #fff;
+				}
+
+				#sticky-nav ul li.action a {
 					background: #10a0d5;
 					color: #fff;
 				}

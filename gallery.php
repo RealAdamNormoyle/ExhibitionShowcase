@@ -5,6 +5,27 @@ if(!isset($_GET['id']))
 	header("Location: index.php");
 
 
+
+
+include "database.php";
+
+$sql = "SELECT * FROM galleries WHERE id = ".$_GET['id'];
+$result = $conn->query($sql);
+$galleryData = $result->fetch_assoc();
+
+if($result->num_rows > 0){
+
+	$sql = "SELECT * FROM users WHERE uid = ".$galleryData['owner'];
+	$result = $conn->query($sql);
+	if($result->fetch_assoc()){
+
+
+
+	}
+
+}
+
+
 ?>
 
 
@@ -37,7 +58,8 @@ if(!isset($_GET['id']))
 			<!-- Banner -->
 				<div id="banner-wrapper">
 					<div id="banner" class="box container">
-                        <h2>Gallery Name</h2>
+						<h2><?php echo "".$galleryData['name'];?></h2>
+						
 					</div>
 				</div>
 
