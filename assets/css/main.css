@@ -19,7 +19,7 @@
 .likeBar{
 	height:20px;
 	background-color:grey;
-	border-radius:50%;
+	border-radius:5px;
 	overflow:hidden;  
 }
 
