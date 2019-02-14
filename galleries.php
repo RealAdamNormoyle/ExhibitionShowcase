@@ -105,9 +105,9 @@ if($result->num_rows > 0){
 								<h2 style=\"margin:0px;padding:0px;\">". $row['name']."</h2>
 								<p>". $row['description']."</p>
 								<div class=\"likeBar\">
-								<div class=\"likeBar-likes style=\"width:".($row['likes']/($row['dislikes']+$row['likes'])) * 100."%\">
+								<div class=\"likeBar-likes style=\"width:".(($row['likes']/($row['dislikes']+$row['likes'])) * 100)."%\">
 								</div>
-							<div class=\"likeBar-dislikes\" style=\"width:".($row['dislikes']/($row['dislikes']+$row['likes'])) * 100."%\">
+							<div class=\"likeBar-dislikes\" style=\"width:".(($row['dislikes']/($row['dislikes']+$row['likes'])) * 100)."%\">
 								</div>
 								</div>
 							<a href=\"gallery.php?id=".$row['id']."\" id=\"createGallery-trigger\" class=\"remove-account-button\" style=\"height:40px;background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;\">ENTER GALLERY</a>
