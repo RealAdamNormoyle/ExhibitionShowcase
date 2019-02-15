@@ -105,7 +105,7 @@ if($result->num_rows > 0){
 								<h2 style=\"margin:0px;padding:0px;\">". $row['name']."</h2>
 								<p>". $row['description']."</p>
 								<div class=\"likeBar\">
-								<div class=\"likeBar-likes style=\"width:".(($row['likes']/($row['dislikes']+$row['likes'])) * 100)."%\">
+								<div class=\"likeBar-likes\" style=\"width:".(($row['likes']/($row['dislikes']+$row['likes'])) * 100)."%\">
 								</div>
 							<div class=\"likeBar-dislikes\" style=\"width:".(($row['dislikes']/($row['dislikes']+$row['likes'])) * 100)."%\">
 								</div>
