@@ -17,11 +17,7 @@ if($result->num_rows > 0){
 
 	$sql = "SELECT * FROM users WHERE uid = ".$galleryData['owner'];
 	$result = $conn->query($sql);
-	if($result->fetch_assoc()){
-
-
-
-	}
+	$owner = $result->fetch_assoc();
 
 }
 
