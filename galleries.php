@@ -100,17 +100,28 @@ if($result->num_rows > 0){
 
 				<!-- Box -->
 					<section class=\"box feature\">
-						<a href=\"#\" class=\"image featured\"><img src=".$bannerImage." alt=\"\" height=\"auto\" width=\"auto\"/></a>
-						<div class=\"inner\" style=\"padding-top:15px;\">
-								<h2 style=\"margin:0px;padding:0px;\">". $row['name']."</h2>
-								<p>". $row['description']."</p>
-								<div class=\"likeBar\">
-								<div class=\"likeBar-likes\" style=\"width:".(($row['likes']/($row['dislikes']+$row['likes'])) * 100)."%\">
-								</div>
-							<div class=\"likeBar-dislikes\" style=\"width:".(($row['dislikes']/($row['dislikes']+$row['likes'])) * 100)."%\">
-								</div>
-								</div>
-							<a href=\"gallery.php?id=".$row['id']."\" id=\"createGallery-trigger\" class=\"remove-account-button\" style=\"height:40px;background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;\">ENTER GALLERY</a>
+					<img class=\"image featured\" src=".$bannerImage." alt=\"\" height=\"auto\" width=\"auto\"/>
+
+						<div class=\"inner\" style=\"padding-top:15px;margin-top:-45px;\">
+
+						<div style=\"z-index:2;height:50px;position:relative;color:#444444;margin-right:-40px;text-shadow: 0 0 3px #ffffff77;\">
+						<div style=\"float:right;width:50px;height:30px;text-align:center;\">
+						<i style=\"float:left;\" class=\"fa fa-thumbs-down\"></i>
+						<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['dislikes']."</p>
+						</div>
+						<div style=\"float:right;width:50px;height:30px;text-align:center;\">
+						<i style=\"float:left;\" class=\"fa fa-thumbs-up\"></i>
+						<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['likes']."</p>
+						</div>
+						<div style=\"float:right;width:50px;height:30px;text-align:center;\">
+						<i style=\"float:left;\" class=\"fa fa-eye\"></i>
+						<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['views']."</p>
+						</div>
+						</div>
+						<h2 style=\"margin:0px;padding:0px;\">". $row['name']."</h2>
+						<p>". $row['description']."</p>
+						<br>
+						<a href=\"gallery.php?id=".$row['id']."\" id=\"createGallery-trigger\" class=\"remove-account-button\" style=\"height:40px;background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;margin-bottom:-10px;\">ENTER GALLERY</a>
 						</div>
 					</section>
 
