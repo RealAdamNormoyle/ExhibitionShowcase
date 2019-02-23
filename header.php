@@ -25,7 +25,6 @@ window.onscroll = function() {OnPageScroll()};
 		});
 
 		var navbar = document.getElementById("sticky-nav");
-		var sticky = navbar.offsetTop;
 
 function OnPageScroll() {
   if (window.pageYOffset <= 10) {
