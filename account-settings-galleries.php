@@ -82,6 +82,16 @@ if($result->num_rows > 0){
                 </div> 
         
         <div style=\"width:100%;text-align:center;padding-top:5px;\"> 
+
+                            <div style=\"width:100%;\">
+								<div class=\"likeBar\">
+									<div class=\"likeBar-likes\" style=\"width:".(($row['likes']/($row['dislikes']+$row['likes'])) * 100)."%\">
+									</div>
+									<div class=\"likeBar-dislikes\" style=\"width:".(($row['dislikes']/($row['dislikes']+$row['likes'])) * 100)."%\">
+									</div>
+								
+								</div>
+							</div>
         
             <p style=\"height:30px;color:white;font-size:25px;font-weight:600;margin-top: -40px;\">". $row['name'] ."</p>
         

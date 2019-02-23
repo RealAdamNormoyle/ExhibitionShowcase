@@ -55,7 +55,7 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 						<div class="row">
 							<div class="col-7 col-12-medium">
 								<h2 style="font-size:30px;">Welcome back <?php echo $_SESSION["firstname"] ?></h2>
-								<p style="font-size:25px;">Make changes to your account</p>
+								<p style="font-size:25px;">Manage your account, Upload new images & Create new galleries</p>
 							</div>
 						</div>
 					</div>
