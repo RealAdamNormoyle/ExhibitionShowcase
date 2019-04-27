@@ -1,9 +1,4 @@
 
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <?php
 session_start();
 
@@ -31,10 +26,6 @@ if(!isset($_SESSION["isLoggedIn"]) || $_SESSION["isLoggedIn"] == false){
 
 	</head>
 	<body class="is-preload homepage">
-
-			<?php include "create-gallery-popup.php"; ?>
-
-			<?php include "upload-image-popup.php"; ?>
 
 			<?php include "upgrade-popup.php"; ?>
 

@@ -1,9 +1,4 @@
 
-<!--
-	Verti by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <?php
 session_start();
 
@@ -47,8 +42,10 @@ if(!isset($_SESSION["LoggedVisit"])){
 						<div class="row">
 							<div class="col-7 col-12-medium" style="text-align:center;">
 								<br>
+								<div class="HeroText">
 								<p>Get started with just a few clicks!</p>
 								<p>Your work defines you.</p>
+								</div>
 							</div>
 							<div class="col-5 col-12-medium" style="width=35%;padding-right:7%;">
 								<ul>

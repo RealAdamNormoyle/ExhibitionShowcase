@@ -1,6 +1,87 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
 
+.HeroText p{
+	font-size: 2.5em;
+}
+
+.line-spacer{
+
+	height:1px;
+	background-color: #0090c5;
+	width:90%;
+	margin:5%;
+	margin-top:0px;
+	margin-bottom:10px;
+}
+
+.content-card{
+
+	background-color:rgba(240, 240, 240, 0.7);
+	border-radius:5px;
+	margin:5%;
+	margin-top:5%;
+	margin-bottom:0px;
+	overflow:hidden;
+}
+
+.content-card:hover{
+
+    box-shadow: 0 0px 0px 2px #0090c5, 0 0px 5px 2px #0090c5;
+
+}
+
+.content-card-active{
+	border-style:solid;
+	border-color:#0090c5;
+	border-width:1px;
+}
+
+.content-card h1{
+	padding-left:5%;
+	padding-right:5%;
+	font-weight:400;
+	font-size:20;
+	
+}
+
+.content-card p{
+
+	padding-left:5%;
+	padding-right:5%;
+	font-weight:400;
+	font-size:14;
+}
+
+.button-left{
+	float:left;
+	width:50%;
+	height:40px;
+	margin:5%;
+	margin-right:0px;
+	color:white;
+	background-color: #0090c5;
+	border-radius:5px;
+	border-top-right-radius:0px;
+	border-bottom-right-radius:0px;
+	text-align:center;
+}
+
+.button-right{
+	float:left;
+	width:40%;
+	height:40px;
+	margin:5%;
+	margin-left:0px;
+	color:white;
+	background-color: #55555555;
+	border-radius:5px;
+	border-top-left-radius:0px;
+	border-bottom-left-radius:0px;
+	text-align:center;
+
+}
+
   .sticky {
 	position: fixed;
 	top: 0;
@@ -30,6 +111,8 @@
 	float:left;
 	height:100%;
 	background-color:rgb(167, 167, 167); 
+	background-color:rgba(194, 194, 194, 0.61); 
+
 }
 
 .likeBar-dislikes{
@@ -41,6 +124,7 @@
 .image-option-overlay{
 	
 	color: #f1f1f1; 
+
 	transition: opacity .5s ease-in;
 	opacity:0;
 	color: white;
@@ -2540,7 +2624,6 @@ input, select, textarea {
 		}
 
 		#banner p {
-			font-size: 2.75em;
 			line-height: 1.35em;
 			margin: 0;
 		}

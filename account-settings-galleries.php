@@ -1,5 +1,9 @@
 
+<?php
+include "new-gallery-content.php";
+?>
 
+<div id="account-galliers-list">
 
 <div style="padding-left:5px;padding-top:5px;overflow:auto;height:100%;" >
     <div style="width:33%;height:300px;float:left;">
@@ -16,6 +20,7 @@
     </div>
 
 <?php
+
 
 include "database.php";
 //Validate post data
@@ -122,3 +127,5 @@ if($result->num_rows > 0){
 
 
 </div>
+</div>
+

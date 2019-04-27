@@ -36,101 +36,118 @@ function OnPageScroll() {
 
 </script>
 
-						<!-- Logo -->
-							<div id="logoImage" style="height:150px;">
+	<!-- Logo -->
+		<div id="logoImage" style="height:150px;">
 
-								<img src="images/Logo2.png" height=100%>
-								<!--<span>An Online Virtual Gallery</span>-->
-							</div>
+			<img src="images/Logo2.png" height=100%>
+			<!--<span>An Online Virtual Gallery</span>-->
+		</div>
 
-						<!-- Nav -->
-							<nav id="nav">
-								<ul>
-									<li <?php if ($currentPage === 'index') {echo 'class="current"';} ?>><a href="index.php">Welcome</a></li>
-									<li <?php if ($currentPage === 'galleries') {echo 'class="current"';} ?>><a href="galleries.php">Galleries</a></li>
-									<li <?php if ($currentPage === 'about') {echo 'class="current"';} ?>><a href="about.php">About</a></li>
-									<li <?php if ($currentPage === 'premium') {echo 'class="current"';} ?>><a href="premium.php">Premium</a></li>
-									<?php
+	<!-- Nav -->
+		<nav id="nav">
 
-									if(isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){
+			<ul>
+				<li <?php if ($currentPage === 'index') {echo 'class="current"';} ?>><a href="index.php">Welcome</a></li>
+				<li <?php if ($currentPage === 'galleries') {echo 'class="current"';} ?>><a href="galleries.php">Galleries</a></li>
+				<li <?php if ($currentPage === 'about') {echo 'class="current"';} ?>><a href="about.php">About</a></li>
+				<li <?php if ($currentPage === 'premium') {echo 'class="current"';} ?>><a href="premium.php">Premium</a></li>
+				<?php
 
-										echo "<li ";
-										if ($currentPage === 'account') {echo 'class="current"';}
-										echo "><a href=\"account.php\">Dashboard</a></li>";
-										echo "<li><a href=\"logout.php\">LogOut</a></li>";
+				if(isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){
 
-									}else{
+					echo "<li ";
+					if ($currentPage === 'account') {echo 'class="current"';}
+					echo "><a href=\"account.php\">Dashboard</a></li>";
+					echo "<li><a href=\"logout.php\">LogOut</a></li>";
 
-										echo 
-										"<li><a id=\"login-trigger\" href=\"#\">Log In </a>
-										
-										<div id=\"LogInPopup\">
-										
-										<form action=\"login.php\" method=\"post\">
-										<div><h4>Log into your account</h4></div>
-										<fieldset id=\"inputs\">
-										<input id=\"username\" type=\"email\" name=\"Email\" placeholder=\"Email address\" required>   
-										<input id=\"password\" type=\"password\" name=\"Password\" placeholder=\"Password\" required>
-										</fieldset>
-										
-										<fieldset id=\"actions\">
-										<input type=\"submit\" id=\"LogInButton\" value=\"Log in\">
-										<input type=\"checkbox\" checked=\"checked\"> <label>Keep me signed in</label>
-										</fieldset>
-										
-										</form>
-										</div>
-										</li>";
-									}
-										
-									?>
+				}else{
 
-								</ul>
-							</nav>
+					echo 
+					"<li><a id=\"login-trigger\" href=\"#\">Log In </a>
+					
+					<div id=\"LogInPopup\">
+					
+					<form action=\"login.php\" method=\"post\">
+					<div><h4>Log into your account</h4></div>
+					<fieldset id=\"inputs\">
+					<input id=\"username\" type=\"email\" name=\"Email\" placeholder=\"Email address\" required>   
+					<input id=\"password\" type=\"password\" name=\"Password\" placeholder=\"Password\" required>
+					</fieldset>
+					
+					<fieldset id=\"actions\">
+					<input type=\"submit\" id=\"LogInButton\" value=\"Log in\">
+					<input type=\"checkbox\" checked=\"checked\"> <label>Keep me signed in</label>
+					</fieldset>
+					
+					</form>
+					</div>
+					</li>";
+				}
+					
+				?>
 
-							<!-- StickyNav -->
-							<nav id="sticky-nav" class="sticky">
-								<ul>
-									<li <?php if ($currentPage === 'index') {echo 'class="current"';} ?>><a href="index.php">Welcome</a></li>
-									<li <?php if ($currentPage === 'galleries') {echo 'class="current"';} ?>><a href="galleries.php">Galleries</a></li>
-									<li <?php if ($currentPage === 'about') {echo 'class="current"';} ?>><a href="about.php">About</a></li>
-									<li <?php if ($currentPage === 'premium') {echo 'class="current"';} ?>><a href="premium.php">Premium</a></li>
-									<?php
+			</ul>
+			
+		</nav>
 
-									if(isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){
+		<!-- StickyNav -->
+		<nav id="sticky-nav" class="sticky">
 
-										echo "<li ";
-										if ($currentPage === 'account') {echo 'class="current"';}
-										echo "><a href=\"account.php\">Dashboard</a></li>";
-										echo "<li><a href=\"logout.php\">LogOut</a></li>";
+		<a href="index.php">
+		<div style="float:left;">
 
-									}else{
+		<img src="images/Logo1.png" height=100%>
+			
+		</div>
+		<div style="float:left; height:100%; margin-top:0.8em;font-size:1.5em">
+			<p> Exhibition Showcase </p>
+		</div>
+		</a>
+		<div style="float:right;">
 
-										echo 
-										"<li><a id=\"login-trigger\" href=\"#\">Log In </a>
-										
-										<div id=\"LogInPopup\">
-										
-										<form action=\"login.php\" method=\"post\">
-										<div><h4>Log into your account</h4></div>
-										<fieldset id=\"inputs\">
-										<input id=\"username\" type=\"email\" name=\"Email\" placeholder=\"Email address\" required>   
-										<input id=\"password\" type=\"password\" name=\"Password\" placeholder=\"Password\" required>
-										</fieldset>
-										
-										<fieldset id=\"actions\">
-										<input type=\"submit\" id=\"LogInButton\" value=\"Log in\">
-										<input type=\"checkbox\" checked=\"checked\"> <label>Keep me signed in</label>
-										</fieldset>
-										
-										</form>
-										</div>
-										</li>";
-									}
-										
-									?>
+			<ul>
+				<li <?php if ($currentPage === 'index') {echo 'class="current"';} ?>><a href="index.php">Welcome</a></li>
+				<li <?php if ($currentPage === 'galleries') {echo 'class="current"';} ?>><a href="galleries.php">Galleries</a></li>
+				<li <?php if ($currentPage === 'about') {echo 'class="current"';} ?>><a href="about.php">About</a></li>
+				<li <?php if ($currentPage === 'premium') {echo 'class="current"';} ?>><a href="premium.php">Premium</a></li>
+				<?php
 
-								</ul>
-							</nav>
+				if(isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){
 
-					</header>
+					echo "<li ";
+					if ($currentPage === 'account') {echo 'class="current"';}
+					echo "><a href=\"account.php\">Dashboard</a></li>";
+					echo "<li><a href=\"logout.php\">LogOut</a></li>";
+
+				}else{
+
+					echo 
+					"<li><a id=\"login-trigger\" href=\"#\">Log In </a>
+					
+					<div id=\"LogInPopup\">
+					
+					<form action=\"login.php\" method=\"post\">
+					<div><h4>Log into your account</h4></div>
+					<fieldset id=\"inputs\">
+					<input id=\"username\" type=\"email\" name=\"Email\" placeholder=\"Email address\" required>   
+					<input id=\"password\" type=\"password\" name=\"Password\" placeholder=\"Password\" required>
+					</fieldset>
+					
+					<fieldset id=\"actions\">
+					<input type=\"submit\" id=\"LogInButton\" value=\"Log in\">
+					<input type=\"checkbox\" checked=\"checked\"> <label>Keep me signed in</label>
+					</fieldset>
+					
+					</form>
+					</div>
+					</li>";
+				}
+					
+				?>
+
+			</ul>
+
+			</div>
+		</nav>
+
+</header>

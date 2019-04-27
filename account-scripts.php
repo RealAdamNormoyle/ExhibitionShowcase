@@ -1,6 +1,5 @@
 <script>
 
-var GAYYYYYYYY = false;
 
 var accountToggleValue = false;
 var galleriesToggleValue = false;
@@ -30,8 +29,12 @@ $(document).ready(function(){
 	galleriesToggleValue = !galleriesToggleValue;
 	if(galleriesToggleValue){
 		document.getElementById("accountGalleries-content").style.display = "block";
+		document.getElementById("account-galliers-list").style.display = "none";
+
 	}else{
 		document.getElementById("accountGalleries-content").style.display = "none";
+		document.getElementById("account-galliers-list").style.display = "none";
+
 	}
 
 	})
@@ -97,15 +100,40 @@ $(document).ready(function(){
 
 	if(canCreate){
 
-		document.getElementById("newGalleryPopup").style.display = "block";
+		document.getElementById("CreateGalleryContent").style.display = "block";
 		document.getElementById("upgradePopup").style.display = "none";
+		document.getElementById("account-galliers-list").style.display = "none";
 
+		document.getElementById("createGallery-Step1").style.display = "block";
 	}else{ 
-		document.getElementById("newGalleryPopup").style.display = "none";
+		document.getElementById("CreateGalleryContent").style.display = "none";
 		document.getElementById("upgradePopup").style.display = "block";
 	}
 
 	})
+
+
+	$currentStep = 0;
+
+	function nextStep(){
+		$currentStep ++;
+
+		document.getElementById("createGallery-Step1").style.display = "none";
+		document.getElementById("createGallery-Step2").style.display = "none";
+		document.getElementById("createGallery-Step3").style.display = "none";
+
+		switch ($currentStep){
+			case 1:
+			document.getElementById("createGallery-Step1").style.display = "block";
+			break;
+			case 2:
+			document.getElementById("createGallery-Step2").style.display = "block";
+			break;
+			case 3:
+			document.getElementById("createGallery-Step3").style.display = "block";
+			break;
+		}
+	}
 
 
 	// Get the element with id="defaultOpen" and click on it
@@ -178,6 +206,14 @@ function openTab(evt, cityName) {
 	}
 	document.getElementById(cityName).style.display = "block";
 	evt.currentTarget.className += " active";
+
+
+	if(cityName == "accountGalleries-content"){
+	document.getElementById("CreateGalleryContent").style.display = "none";
+	document.getElementById("account-galliers-list").style.display = "block";
+
+
+	}
 }
 
 </script>
