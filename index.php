@@ -60,7 +60,7 @@ if(!isset($_SESSION["LoggedVisit"])){
 			<!-- Features -->
 				<div id="features-wrapper">
 					<div class="container">
-						<div class="row">
+						<div class="row" style="margin-left:-15px;">
 							<div class="col-4 col-12-medium">
 
 								<!-- Box -->

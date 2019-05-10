@@ -3,7 +3,8 @@
 session_start();
 ?>
 
-<?php $currentPage = 'galleries'; ?>
+<?php $currentPage = 'galleries'; 
+?>
 
 <html>
 	<head>
@@ -12,16 +13,6 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script>
-		$(document).ready(function(){
-		  $('#login-trigger').click(function(){
-			$(this).next('#LogInPopup').slideToggle();
-			$(this).toggleClass('active');          
-			
-			})
-		});
-</script>
         
 	</head>
 	<body class="is-preload homepage">
@@ -37,43 +28,94 @@ session_start();
 			<!-- Banner -->
 				<div id="banner-wrapper">
 					<div id="banner" class="box container">
-						<div class="row">
-								<div style="width:30%;">
+						<div class="galleries-header">
+
+								<div style="width:30%;float:left;display:block;">
+								<div class="HeroText">
 								<p>Browse Galleries</p>
+								<p style="font-size:1.5em;">Discover something new.</p>
+							
 								</div>
-								<div style="width:70%;">
+								</div>
+								<div style="float:right;height:50px;display:block;">
 								<div class="search-container">
 									<form action="galleries.php">
-										<input style="width:80%;margin-right:10px;display:inline-block;" type="text" placeholder="Search.." name="search">
-										<button style="width:35px;height:35px;padding:0px;margin:0px;"type="submit"><i class="fa fa-search"></i></button>
+										<input style="width:80%;margin-right:10px;display:inline-block;height:30px;" type="text" placeholder="Search.." name="search">
+										<button style="width:30px;height:30px;padding:0px;margin:0px;"type="submit"><i class="fa fa-search"></i></button>
 									</form>
+									
+									<div class="sreach-tag-container">
+										<div class="search-tag">
+											<a href=""><p>Photography</p></a>
+										</div>
+										<div class="search-tag">
+											<a href=""><p>Drawn</p></a>
+										</div>
+										<div class="search-tag">
+											<a href=""><p>Painted</p></a>
+										</div>
+										<div class="search-tag">
+											<a href=""><p>Digital</p></a>
+										</div>
+										<div class="search-tag">
+											<a href=""><p>FanArt</p></a>
+										</div>
+									</div>
 								</div>
-								</div>
+								
+						</div>
 						</div>
 					</div>
+					<br>
+
+					<div class="pagnation-container box" style="padding-top: 0px;">
+						<div style="float:left;width:20%;text-align:right;">
+							<p><</p>
+						</div>
+
+						<div style="float:right;width:20%;text-align:left;">
+						<p>></p>
+						</div>
+						
+						<div style="float:right;width:60%;text-align:center;">
+								<p>1,2,3,4,5,6,7,8,9</p>
+								
+						</div>
+					</div>
+
 				</div>
 
 			<!-- Features -->
-				<div id="features-wrapper">
-					<div class="container">
-						<div class="row">
+				<div id="features-wrapper" style="padding-bottom:0px;">
+					<div class="container" >
+						<div class="row" style="background-color:rgb(233, 233, 233);margin-left:-15px;margin-bottom:10px;">
 
 						<?php
 
 include "database.php";
 //Validate post data
 
-$sql = "SELECT * FROM galleries";
+
+if(isset($_GET["search"])){
+	$sql = "SELECT * FROM galleries WHERE LOCATE(*' INSERT * FROM users,'name') > 0" ;
+
+}else{
+
+	$sql = "SELECT * FROM galleries";
+}
+
 $result = $conn->query($sql);
 
-$pages = ceil($result->num_rows / 25);
-$currentPage = 1;
 
+if($result != NULL){
+	
 if($result->num_rows > 0){
 		// output data of each row
-		
+		$pages = ceil($result->num_rows / 25);
+		$page = 1;
+
 		$itemCount = 25;
-		if($result->num_rows < (25 * $currentPage)){
+		if($result->num_rows < (25 * $page)){
 			$itemCount = $result->num_rows;
 		}
 
@@ -90,37 +132,48 @@ if($result->num_rows > 0){
 					$bannerImage = "http://exhibitionshowcase.co.uk/images/banner-default.jpg";
 			}
 
-        echo "
-				<div class=\"col-4 col-12-medium\">
-
+				echo "
+				
+				
+				<div class=\"col-4 col-12-medium\" style=\"padding-bottom:10px;padding-top:10px;\">
+				
+				<a href=\"gallery.php?id=".$row['id']."\"> 
 				<!-- Box -->
-					<section class=\"box feature\">
+					<section class=\"box feature\" style=\"margin-bottom:20px;margin-top:10px;\">
 					<img class=\"image featured\" src=".$bannerImage." alt=\"\" height=\"auto\" width=\"auto\"/>
 
-						<div class=\"inner\" style=\"padding-top:15px;margin-top:-45px;\">
+						<div class=\"inner\" style=\"padding-top:15px;margin-top:0px;\">
 
-						<div style=\"z-index:2;height:50px;position:relative;color:#444444;margin-right:-40px;text-shadow: 0 0 3px #ffffff77;\">
-						<div style=\"float:right;width:50px;height:30px;text-align:center;\">
-						<i style=\"float:left;\" class=\"fa fa-thumbs-down\"></i>
-						<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['dislikes']."</p>
-						</div>
-						<div style=\"float:right;width:50px;height:30px;text-align:center;\">
-						<i style=\"float:left;\" class=\"fa fa-thumbs-up\"></i>
-						<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['likes']."</p>
-						</div>
-						<div style=\"float:right;width:50px;height:30px;text-align:center;\">
-						<i style=\"float:left;\" class=\"fa fa-eye\"></i>
-						<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['views']."</p>
-						</div>
-						</div>
-						<h2 style=\"margin:0px;padding:0px;\">". $row['name']."</h2>
-						<p>". $row['description']."</p>
-						<br>
-						<a href=\"gallery.php?id=".$row['id']."\" id=\"createGallery-trigger\" class=\"remove-account-button\" style=\"height:40px;background-color:#0090c5;color:white;font-size:20px;padding: 10px 25px 10px 25px;text-decoration:none;border-radius:5px;margin-bottom:-10px;\">ENTER GALLERY</a>
-						</div>
-					</section>
+							<div style=\"float:left;margin-left:-20px;\">
+								<h2 style=\"margin:0px;padding:0px;font-size:1.1em;font-weight:300;\">". $row['name']."</h2>
+											
+							</div>
 
-			</div>";
+							<div style=\"float:right;margin-right:-45px;\">
+								<div style=\"z-index:2;height:50px;position:relative;color:#444444;margin-right:0px;text-shadow: 0 0 3px #ffffff77;\">
+									<div style=\"float:right;width:50px;height:30px;text-align:center;\">
+										<i style=\"float:left;\" class=\"fa fa-thumbs-down\"></i>
+										<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['dislikes']."</p>
+									</div>
+									<div style=\"float:right;width:50px;height:30px;text-align:center;\">
+										<i style=\"float:left;\" class=\"fa fa-thumbs-up\"></i>
+										<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['likes']."</p>
+									</div>
+									<div style=\"float:right;width:50px;height:30px;text-align:center;\">
+										<i style=\"float:left;\" class=\"fa fa-eye\"></i>
+										<p style=\"float:left;font-size:12px;font-weight:600;\">". $row['views']."</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+									
+									</section>
+									
+									</a>
+									</div>
+
+			";
        
     }
 }else{
@@ -128,12 +181,39 @@ if($result->num_rows > 0){
 	echo "There are no images uploaded";
 }
 
+}
+
 ?>
 							
+								</div>
+							</div>
+					</div>
+					
+				</div>
 
+				<div id="banner-wrapper">				
+				<div class="pagnation-container box" style="padding-top: 0px;">
+						<div style="float:left;width:20%;text-align:right;">
+							<p><</p>
 						</div>
+
+						<div style="float:right;width:20%;text-align:left;">
+						<p>></p>
+						</div>
+						
+						<div style="float:right;width:60%;text-align:center;">
+								<p>1,2,3,4,5,6,7,8,9</p>
+								
+						</div>
+
+					</div>
+
 					</div>
 				</div>
+
+<br>
+
+
 
 			<!-- Main -->
 				<div id="main-wrapper">

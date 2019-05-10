@@ -1,8 +1,16 @@
 <head>
 <meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/v4-shims.css">
 		
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -48,9 +56,9 @@ function OnPageScroll() {
 
 			<ul>
 				<li <?php if ($currentPage === 'index') {echo 'class="current"';} ?>><a href="index.php">Welcome</a></li>
-				<li <?php if ($currentPage === 'galleries') {echo 'class="current"';} ?>><a href="galleries.php">Galleries</a></li>
-				<li <?php if ($currentPage === 'about') {echo 'class="current"';} ?>><a href="about.php">About</a></li>
-				<li <?php if ($currentPage === 'premium') {echo 'class="current"';} ?>><a href="premium.php">Premium</a></li>
+				<li <?php if ($currentPage === 'galleries') {echo 'class="current"';} ?>><a href="galleries.php">Discover</a></li>
+				<li <?php if ($currentPage === 'about') {echo 'class="current"';} ?>><a href="about.php">Learn More</a></li>
+				<li <?php if ($currentPage === 'premium') {echo 'class="current"';} ?>><a href="premium.php">Pricing</a></li>
 				<?php
 
 				if(isset($_SESSION["isLoggedIn"]) && $_SESSION["isLoggedIn"] === true){

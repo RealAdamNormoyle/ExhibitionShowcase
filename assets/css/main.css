@@ -1,6 +1,87 @@
 @import url("font-awesome.min.css");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script:400|Open+Sans:300,300italic,600,600italic,800");
 
+.pagnation-container{
+	background: #fff;
+    border-radius: 6px;
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.05);
+	padding: 2em;
+	padding-top:10px;
+	padding-bottom:10px;
+	margin: 0 auto;
+    max-width: 100%;
+    width: 1300px;
+}
+
+.search-tag{
+	text-decoration: none;
+	background-color:rgb(243, 243, 243);
+	border-style: solid;
+	border-radius: 5px;
+	margin: 10px;
+	margin-top:2px;
+	margin-bottom:2px;
+
+	width:auto;
+	float:left;
+	padding:10px;
+	padding-top:2px;
+	padding-bottom:2px;
+
+}
+
+.search-tag a,.search-tag p{
+	text-decoration: none;
+	font-size: 1em;
+}
+
+.search-tag-container{
+	display:flexbox;
+	text-decoration: none;
+}
+
+.carousel{
+	height:35em;
+	overflow: hidden;
+	vertical-align: middle;
+}
+
+.slide{
+	margin:2em;
+
+}
+
+.last h2{
+	margin-bottom:0.5em;
+}
+
+
+.carousel-container{
+	vertical-align: middle;
+}
+
+.content-container{
+
+	background-color: rgb(240, 240, 240);
+	border-radius: 5px;
+	padding:20px;
+	margin-bottom:5em;
+
+}
+
+.galleries-header{
+
+	display: block;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    align-items: stretch;
+}
+
+
+.content-container p{
+font-size:1.1em;
+}
+
 .HeroText p{
 	font-size: 2.5em;
 }
@@ -93,8 +174,7 @@
 
 .search-container{
 	width:300px;
-	float:left;
-	margin-top:15px;
+	float:right;
 }
 
 .likeBar{
@@ -668,7 +748,7 @@ input, select, textarea {
 	.container {
 		margin: 0 auto;
 		max-width: 100%;
-		width: 1400px;
+		width: 1300px;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -900,7 +980,7 @@ input, select, textarea {
 		}
 
 			.row > * {
-				padding: 40px 0 0 40px;
+				padding: 40px 20px 0 20px;
 			}
 
 			.row.gtr-uniform {
@@ -2296,6 +2376,19 @@ input, select, textarea {
 
 			.box.feature p {
 				margin: 0;
+			}
+
+			.box.feature.button{
+				background: #0090c5;
+				color: white;
+				padding: 0;
+				width:100%;
+			}
+
+			.box.feature.button h2{
+				font-size: 1.35em;
+
+				color: white;
 			}
 
 			.box.feature .image {

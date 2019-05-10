@@ -12,16 +12,6 @@ session_start();
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<script>
-		$(document).ready(function(){
-		  $('#login-trigger').click(function(){
-			$(this).next('#LogInPopup').slideToggle();
-			$(this).toggleClass('active');          
-			
-			})
-		});
-</script>
         
 	</head>
 	<body class="is-preload homepage">
@@ -38,17 +28,12 @@ session_start();
 				<div id="banner-wrapper">
 					<div id="banner" class="box container">
 						<div class="row">
-							<div class="col-7 col-12-medium">
-								<h2>Your Gallery Awaits</h2>
-								<p>Get started with just a few clicks!</p>
-								<p>Your work defines you.</p>
+							<div class="HeroText">
+								<p>Subscription Benefits</p>
+								<p style="font-size:1.5em;">Choose a subscription tier perfect for you.</p>
+							
 							</div>
-							<div class="col-5 col-12-medium">
-								<ul>
-									<li><a href="#" class="button large icon fa-arrow-circle-right">Create Gallery</a></li>
-									<li><a href="#" class="button alt large icon fa-question-circle">Try The Demo</a></li>
-								</ul>
-							</div>
+
 						</div>
 					</div>
 				</div>
@@ -60,28 +45,41 @@ session_start();
 							<div class="col-4 col-12-medium">
 
 								<!-- Box -->
-									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/Art1.jpg" alt="" height="275px" width="auto"/></a>
-										<div class="inner">
+									<section class="box feature"  style="margin-bottom:1em;">
+										<div class="inner" style="padding-top:2em;padding-bottom:0.1em;height:80px">
 											<header>
-												<h2>Traditional Art</h2>
-												<p>The place for hanging your paintings and art for everyone to love fill a gallery with your work</p>
+												<div style="float:left;text-align:center;">
+
+													<h2 style="text-align:center;">Basic</h2>
+												</div>
+												<div style="float:right;">
+												<h2 style="text-align:center;">(FREE)</h2>
+													
+												</div>
 											</header>
 											<p></p>
 										</div>
 									</section>
 
-							</div>
-							<div class="col-4 col-12-medium">
-
-								<!-- Box -->
+																	<!-- Box -->
 									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/Art2.jpg" alt="" height="275px" width="auto"/></a>
-										<div class="inner">
+										<div class="inner"  style="padding-top:2em;padding-bottom:0.3em;background-color:#f8f8f8;border-radius:5px;">
 											<header>
-												<h2>Digital Art</h2>
-												<p>Bring your work to life and let the world see your work in a new light like never before</p>
+												<p style="line-height:1.5em;">The complete professional experience - Unlimited Galleries, Multiple Sized Galleries, Wide Range Of Decor.  </p>
 											</header>
+										</div>
+										<div class="inner"  style="padding-top:2em;padding-bottom:2em;">
+											<div style="text-align:center;">
+											<h3 style="font-weight:500;">Why Try Now?</h3>
+											</div>
+											<div>
+												<ul>
+													<li>One gallery free forever</li>
+													<li>Upto 10 Images</li>
+													<li>Perfect for student projects</li>
+
+												<ul>
+											</div>
 										</div>
 									</section>
 
@@ -89,18 +87,140 @@ session_start();
 							<div class="col-4 col-12-medium">
 
 								<!-- Box -->
-									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/Art3.jpg" alt="" height="275px" width="auto"/></a>
-										<div class="inner">
+									<section class="box feature"   style="margin-bottom:1em;">
+										<div class="inner"  style="padding-top:2em;padding-bottom:0.1em;height:80px">
 											<header>
-												<h2>Photography</h2>
-												<p>Exhibit your work to the world, landscape or portrait your work will look amazing</p>
+												<div style="float:left;text-align:center;">
+
+												<h2 style="text-align:center;">Plus</h2>
+												</div>
+												<div style="float:right;">
+												<h2 style="text-align:center;">(£4.99 pm)</h2>
+													
+												</div>
 											</header>
 										</div>
+									</section>
+
+									<!-- Box -->
+									<section class="box feature">
+										<div class="inner"  style="padding-top:2em;padding-bottom:0.3em;background-color:#f8f8f8;border-radius:5px;">
+											<header>
+												<p style="line-height:1.5em;">The complete professional experience - Unlimited Galleries, Multiple Sized Galleries, Wide Range Of Decor.  </p>
+											</header>
+										</div>
+										<div class="inner"  style="padding-top:2em;padding-bottom:2em;">
+											<div style="text-align:center;">
+											<h3 style="font-weight:500;">Whats Extra?</h3>
+											</div>
+											<div>
+												<ul>
+													<li>Upto 3 galleries</li>
+													<li>Bigger interiors, upto 20 images per gallery</li>
+													<li>More interior decor to choose from</li>
+													<li>Private Messages</li>
+												<ul>
+											</div>
+										</div>
+									</section>
+
+							</div>
+							<div class="col-4 col-12-medium" >
+
+								<!-- Box -->
+									<section class="box feature"  style="margin-bottom:1em;">
+										<div class="inner"  style="padding-top:2em;padding-bottom:0.1em;height:80px">
+											<header>
+
+											<div style="float:left;text-align:center;">
+												<h2 style="text-align:center;">Professional</h2>
+												</div>
+
+												<div style="float:right; height:auto;">
+												<h2 style="text-align:center;">(£9.99 pm)</h2>
+													
+												</div>
+											</header>
+										</div>
+									</section>
+
+									<!-- Box -->
+									<section class="box feature">
+										<div class="inner"  style="padding-top:2em;padding-bottom:0.3em;background-color:#f8f8f8;border-radius:5px;">
+											<header>
+												
+												<p style="line-height:1.5em;">The complete professional experience - Unlimited Galleries, Multiple Sized Galleries, Wide Range Of Decor.  </p>
+												
+											</header>
+										</div>
+										<div class="inner"  style="padding-top:2em;padding-bottom:2em;">
+											<div style="text-align:center;">
+											<h3 style="font-weight:500;">Why Go Pro?</h3>
+											</div>
+											<div>
+												<ul>
+													<li>Upto 10 galleries</li>
+													<li>Full selection of interior designs, upto 30 images per gallery</li>
+													<li>Public Profile Page</li>
+													<li>Donations</li>
+													<li>Embed to your website</li>
+
+												<ul>
+											</div>
+										</div>
+
 									</section>
 
 							</div>
 						</div>
+						<br>
+						<div class="row">
+							<div class="col-4 col-12-medium">
+
+							<!-- Box -->
+							<a href="">
+								<section class="box feature Button"  style="margin-bottom:1em;">
+									<div class="inner" style="padding-top:1em;padding-bottom:0.1em;height:80px;text-align:center;">
+										<header>
+											<h2>Try Now!</h2>
+										</header>
+										<p></p>
+									</div>
+								</section>
+</a>
+							</div>
+
+							<div class="col-4 col-12-medium">
+
+							<!-- Box -->
+							<a href="">
+								<section class="box feature Button"  style="margin-bottom:1em;">
+									<div class="inner" style="padding-top:1em;padding-bottom:0.1em;height:80px;text-align:center;">
+										<header>
+											<h2>Get Plus!</h2>
+										</header>
+										<p></p>
+									</div>
+								</section>
+</a>
+							</div>
+
+							<div class="col-4 col-12-medium">
+
+							<!-- Box -->
+							<a href="">
+								<section class="box feature Button"  style="margin-bottom:1em;">
+									<div class="inner" style="padding-top:1em;padding-bottom:0.1em;height:80px;text-align:center;">
+										<header>
+											<h2>Go Pro!</h2>
+										</header>
+										<p></p>
+									</div>
+								</section>
+							</a>
+							</div>
+						<div>
+
 					</div>
 				</div>
 
